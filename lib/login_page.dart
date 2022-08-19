@@ -12,7 +12,15 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: Column(
+        children:[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 90, vertical: 45),
+            child: Image.asset('lib/assets/colegiomilitarlogo.png',
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
