@@ -1,10 +1,11 @@
-  import 'package:app_escola_bites/login_page.dart';
+  import 'package:app_escola_bites/home_page.dart';
+import 'package:app_escola_bites/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: LoginPage(),
+    home: HomePageScreen(),
   ));
 }
 class MainDart extends StatefulWidget {

@@ -36,3 +36,6 @@ const String primaryFont = "Kastelov";
 const String actor = 'assets/animations/home_animated.riv';
 
 typedef MapSD = Map<String, dynamic>;
+
+double altura(BuildContext context) => MediaQuery.of(context).size.height;
+Color corPadraoApp = Color(0xff083d99);
