@@ -1,47 +1,43 @@
+import 'package:app_escola_bites/app_config.dart';
 import 'package:flutter/material.dart';
 
-class HomePageScreen extends StatefulWidget {
-  const HomePageScreen({ Key? key }) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({ Key? key }) : super(key: key);
 
   @override
-  State<HomePageScreen> createState() => _HomePageScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageScreenState extends State<HomePageScreen> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Card(
-                  margin: EdgeInsets.all(10),
-                  color: Colors.white,
-                  elevation: 15,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Card(
-                  margin: EdgeInsets.all(10),
-                  color: Colors.white,
-                  elevation: 15,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+     body: SafeArea(child:
+      SingleChildScrollView(
+child: Container(
+  height: altura(context),
+  width: largura(context),
+ color: Color.fromARGB(255, 178, 44, 44), 
+ child: Stack(
+  children: [
+
+  //  Padding(padding: EdgeInsets.symmetric(horizontal: 25),
+    Column(
+      // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(vertical: 15),child: Card(
+                      
+                      color: Color.fromARGB(255, 236, 236, 236),
+                    ),),
+                    
+                  ],
+    ),
+  ],
+ ),
+)
+     ),
+     ),
     );
   }
 }
