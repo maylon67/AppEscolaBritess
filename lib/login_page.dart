@@ -133,9 +133,9 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('lib/assets/fhii.png',height: 50,width: 50,),
-                        SizedBox(width: 3,),
-                        Text('Desenvolvido por FHI',style: GoogleFonts.oswald(fontSize: 13,color: corPadraoApp),),
+                        Image.asset('lib/assets/bisoft.png',height: 40,width: 40,),
+                        SizedBox(width: 13,),
+                        Text('Desenvolvido por BISOFT',style: GoogleFonts.oswald(fontSize: 15,color: Color.fromARGB(255, 0, 0, 0)),),
                       ],
                     )
                   ],
