@@ -11,8 +11,10 @@ class LoginPage extends StatefulWidget {
 }
 
 TextEditingController emailControle = TextEditingController();
-
+TextEditingController senhaControle = TextEditingController();
+TextEditingController userControle = TextEditingController();
 class _LoginPageState extends State<LoginPage> {
+  bool estaObscuro = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 8,
                     ),
                     Text(
-                      'Colégio Tiradentes',
+                      'Formandos 2024',
                       style: GoogleFonts.oswald(
                           color: Color(0xFF083D99), fontSize: 29),
                     ),
@@ -83,18 +85,23 @@ class _LoginPageState extends State<LoginPage> {
                           side:
                               BorderSide(color: Color(0xff083d99), width: 2.5)),
                       child: TextFormField(
-                        controller: emailControle,
+                        controller: senhaControle,
+                        obscureText: estaObscuro,
                         decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 5),
+                          contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 12),
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
                           disabledBorder: InputBorder.none,
-                          prefixIcon: Icon(
-                            Ionicons.eye_off,
-                            color: Color(0xFF083d99),
-                          ),
+                          prefixIcon: Icon(Ionicons.key,color: corPadraoApp,),
+                         suffixIcon: IconButton(
+                                onPressed: (){setState(() => estaObscuro = !estaObscuro);}, 
+                                icon: Icon(
+                                  estaObscuro ? Icons.visibility : Icons.visibility_off, 
+                                  color: corPadraoApp,
+                                )
+                              ),
                           labelText: 'Sua Senha',
                           labelStyle: GoogleFonts.oswald(
                             color: Color(0xff083d99),
@@ -104,6 +111,33 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       shadowColor: Color.fromARGB(255, 14, 59, 136),
                     ),
+                    SizedBox(height: 67,),
+                    Row(
+                      children: [
+                        Expanded(child:
+                        RaisedButton(onPressed: (){},
+                        child: Text('Login',style: GoogleFonts.oswald(
+                          color: Colors.white,
+                          fontSize: 27,
+                        ),),
+                        color: corPadraoApp,
+                        shape:  RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          side:
+                              BorderSide(color: Color.fromARGB(255, 1, 1, 1), width: 1.5)),
+                        ),
+                         ),
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 125)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('lib/assets/fhii.png',height: 50,width: 50,),
+                        SizedBox(width: 3,),
+                        Text('Desenvolvido por FHI',style: GoogleFonts.oswald(fontSize: 13,color: corPadraoApp),),
+                      ],
+                    )
                   ],
                 ),
                 ),
