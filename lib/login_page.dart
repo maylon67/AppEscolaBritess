@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Expanded(child:
                         RaisedButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => PaginaInico()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
                         },
                         child: Text('Login',style: GoogleFonts.oswald(
                           color: Colors.white,

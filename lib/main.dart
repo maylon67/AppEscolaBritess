@@ -17,8 +17,6 @@ class MainDart extends StatefulWidget {
 class _MainDartState extends State<MainDart> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
