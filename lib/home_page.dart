@@ -16,7 +16,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: corPadraoApp,
+      appBar: AppBar(
+        title: Text('Seja bem vindo Usuario!',style: GoogleFonts.oswald(fontSize: 25),),
+        backgroundColor: Color(0xFFF52314),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -32,17 +37,19 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 12,
                   ),
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics:PageScrollPhysics(),
                 children: [ 
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 1),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
                     child: GestureDetector(
                     child: Card(
                       color: Colors.white,
                       elevation: 6,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)
+                        borderRadius: BorderRadius.circular(15),
+                        side: BorderSide(color: Colors.red,width: 3.5)
                       ),
+                      
                       ),
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => listaPage()));
@@ -55,7 +62,8 @@ class _HomePageState extends State<HomePage> {
                      color: Colors.white,
                      elevation: 6,
                      shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)
+                      borderRadius: BorderRadius.circular(15),
+                      side: BorderSide(color: Colors.red,width: 3.5)
                      ),
                      ),
                      onTap:(){
