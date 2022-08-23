@@ -1,4 +1,5 @@
 import 'package:app_escola_bites/app_config.dart';
+import 'package:app_escola_bites/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
@@ -115,7 +116,9 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       children: [
                         Expanded(child:
-                        RaisedButton(onPressed: (){},
+                        RaisedButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => PaginaInico()));
+                        },
                         child: Text('Login',style: GoogleFonts.oswald(
                           color: Colors.white,
                           fontSize: 27,
@@ -137,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(width: 13,),
                         Text('Desenvolvido por BISOFT',style: GoogleFonts.oswald(fontSize: 15,color: Color.fromARGB(255, 0, 0, 0)),),
                       ],
-                    )
+                    ),
                   ],
                 ),
                 ),

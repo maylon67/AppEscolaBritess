@@ -1,43 +1,35 @@
-import 'package:app_escola_bites/app_config.dart';
+import 'package:app_escola_bites/lista_page.dart';
+import 'package:app_escola_bites/lista_segunda_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ionicons/ionicons.dart';
+import 'package:app_escola_bites/app_config.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({ Key? key }) : super(key: key);
+class PaginaInico extends StatefulWidget {
+  const PaginaInico({ Key? key }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<PaginaInico> createState() => _PaginaInicoState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _PaginaInicoState extends State<PaginaInico> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     body: SafeArea(child:
-      SingleChildScrollView(
-child: Container(
-  height: altura(context),
-  width: largura(context),
- color: Color.fromARGB(255, 178, 44, 44), 
- child: Stack(
-  children: [
-
-  //  Padding(padding: EdgeInsets.symmetric(horizontal: 25),
-    Column(
-      // mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(padding: EdgeInsets.symmetric(vertical: 15),child: Card(
-                      
-                      color: Color.fromARGB(255, 236, 236, 236),
-                    ),),
-                    
-                  ],
-    ),
-  ],
- ),
-)
-     ),
-     ),
+      backgroundColor: Color.fromARGB(255, 100, 96, 96),
+      body: SizedBox(
+        height: altura(context),
+        width: largura(context),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [ 
+          SizedBox(height: 398,width: 390,child: GestureDetector(child: Card(color: Colors.yellow,),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (_) => listaSegundaPage()));},),),
+          Padding(padding: EdgeInsets.symmetric(vertical: 15)),
+           SizedBox(height: 430,width: 390,child: GestureDetector(child: Card(color: Colors.green,),onTap:(){ Navigator.push(context, MaterialPageRoute(builder: (_) =>listaPage() ));}),),
+          ],
+        ),
+      ),
     );
   }
 }
