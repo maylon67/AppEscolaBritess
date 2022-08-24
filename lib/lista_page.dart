@@ -16,23 +16,9 @@ class _listaPageState extends State<listaPage> {
       appBar: AppBar(
         title: Text('Primeira Lista'),
         backgroundColor: corPadraoApp,
-        centerTitle: true,
+        centerTitle: true ,
       ),
-      body: GridView(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 1,
-        ),
-        children: [
-          Card(
-            color: Colors.white,
-            elevation: 6,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15)
-            ),
-          )
-        ],
-        physics: NeverScrollableScrollPhysics(),
-      ),
+      body: ListView()
     );
   }
 }

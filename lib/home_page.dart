@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: corPadraoApp,
+      backgroundColor: Color.fromARGB(255, 255, 247, 247),
       appBar: AppBar(
         title: Text('Seja bem vindo Usuario!',style: GoogleFonts.oswald(fontSize: 25),),
         backgroundColor: Color(0xFFF52314),
@@ -46,10 +46,22 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                       elevation: 6,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        side: BorderSide(color: Colors.red,width: 3.5)
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        child: Column(
+                          children: [
+                            Text('Seu Saldo',
+                            style: TextStyle(
+                              color: corPadraoApp,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                            ),
+                          ],
+                        ),
+                      ),
                       ),
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => listaPage()));
@@ -62,8 +74,7 @@ class _HomePageState extends State<HomePage> {
                      color: Colors.white,
                      elevation: 6,
                      shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      side: BorderSide(color: Colors.red,width: 3.5)
+                      borderRadius: BorderRadius.circular(20),
                      ),
                      ),
                      onTap:(){
@@ -75,7 +86,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
            ),
-          physics: NeverScrollableScrollPhysics(),
         ),
       ),
     );
