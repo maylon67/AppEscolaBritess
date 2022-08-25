@@ -47,18 +47,43 @@ class _HomePageState extends State<HomePage> {
                       elevation: 6,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(color: corPadraoApp,width: 1.9)
                       ),
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 15),
                         child: Column(
                           children: [
-                            Text('Seu Saldo',
-                            style: TextStyle(
-                              color: corPadraoApp,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                            Center(
+                              child: Text('Seu Saldo',
+                              style: GoogleFonts.openSans(
+                                color: corPadraoApp,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                              ),
                             ),
+
+                            Center(
+                              child: Padding(
+                                padding:  EdgeInsets.symmetric(vertical: 0),
+                                child: Text('R\$ 98.996,98',style: GoogleFonts.oswald(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
+                              ),
                             ),
+                            SizedBox(height: 15),
+                            Divider(color: Colors.black,thickness: 1.5,),
+                          Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                               Text('Tipo',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
+                               Text('Objetivo',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
+                               Text('Arrecadado',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
+                               Text('%Atingido',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
+                          ],
+                          ),
+                          Divider(
+                            color: Colors.black,
+                            thickness: 1.5,
+                          ),
                           ],
                         ),
                       ),
@@ -75,6 +100,17 @@ class _HomePageState extends State<HomePage> {
                      elevation: 6,
                      shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(color: corPadraoApp,width: 1.9),
+                     ),
+                     child: Column(
+                       children: [
+                        Padding(padding: EdgeInsets.symmetric(vertical: 20),),
+                        
+                        Center(child: Text('Saldo Bancario',style: GoogleFonts.oswald(color: corPadraoApp,fontSize: 25),),),
+                        Padding(padding: EdgeInsets.symmetric(vertical: 25)),
+                        Center(child: Text('R\$ 99.999,99',style: GoogleFonts.oswald(fontSize: 42,color: Colors.black),))
+
+                       ],
                      ),
                      ),
                      onTap:(){

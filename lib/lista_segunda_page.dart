@@ -18,7 +18,9 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
-      body: ListView()
+      body: ListView(
+        shrinkWrap: true,
+      ),
     );
   }
 }

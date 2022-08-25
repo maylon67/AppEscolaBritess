@@ -18,7 +18,7 @@ import 'package:app_escola_bites/app_config.dart';
    required this.userId,
    required this.lastLogin,
    required this.isLogged,
-   required this.password
+   required this.password,
   });
 
    @override
