@@ -30,95 +30,186 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [ 
-              GridView(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
-                  crossAxisSpacing: 12,
-                  mainAxisSpacing: 12,
-                  ),
-                  shrinkWrap: true,
-                  physics:PageScrollPhysics(),
-                children: [ 
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
-                    child: GestureDetector(
-                    child: Card(
-                      color: Colors.white,
-                      elevation: 6,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(color: corPadraoApp,width: 1.9)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
+                child: GestureDetector(
+                child: Card(
+                  color: Colors.white,
+                  elevation: 6,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(
+                      color: corPadraoApp,
+                      width: 1.9,
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        child: Column(
-                          children: [
-                            Center(
-                              child: Text('Seu Saldo',
-                              style: GoogleFonts.openSans(
-                                color: corPadraoApp,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                              ),
-                            ),
-
-                            Center(
-                              child: Padding(
-                                padding:  EdgeInsets.symmetric(vertical: 0),
-                                child: Text('R\$ 98.996,98',style: GoogleFonts.oswald(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
-                              ),
-                            ),
-                            SizedBox(height: 15),
-                            Divider(color: Colors.black,thickness: 1.5,),
-                          Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                               Text('Tipo',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
-                               Text('Objetivo',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
-                               Text('Arrecadado',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
-                               Text('%Atingido',style: GoogleFonts.oswald(color:Colors.black,fontSize: 19,fontWeight: FontWeight.bold),),
-                          ],
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 30),
+                    child: Column(
+                      children: [
+                        Center(
+                          child: Text('Seu Saldo',
+                          style: GoogleFonts.openSans(
+                            color: corPadraoApp,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
                           ),
-                          Divider(
-                            color: Colors.black,
-                            thickness: 1.5,
                           ),
-                          ],
                         ),
+                        Center(
+                          child: Padding(
+                            padding:  EdgeInsets.symmetric(vertical: 0),
+                            child: Text('R\$ 98.996,98',style: GoogleFonts.oswald(fontSize: 42,fontWeight: FontWeight.bold,color: Colors.black),),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 15,
+                          ),
+                        Divider(
+                          height: 0,
+                          color: Colors.black,
+                          thickness: 1.5,),
+                      Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                            Expanded(child: Text('',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                            Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                           Expanded(child: Text('Mensalidade',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                            Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                           Expanded(child: Text('Rifa',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                      ],
                       ),
+                      Divider(
+                        height: 0,
+                        color: Colors.black,
+                        thickness: 1.5,
                       ),
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => listaPage()));
-                        }),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(child: Text('Objetivo',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                           Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                          Expanded(child: Text('2.260,00',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                           Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                          Expanded(child: Text('1.400,00',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                        ],
+                      ),
+                      Divider(
+                        height: 0,
+                        color: Colors.black,
+                        thickness: 1.5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(child: Text('Arrecadado',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                           Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                          Expanded(child: Text('99,999,99',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                           Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                          Expanded(child: Text('99.999,99',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                        ],
+                      ),
+                      Divider(
+                        height: 0,
+                        color: Colors.black,
+                        thickness: 1.5,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(child: Text('% Atingida',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                           Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                           Expanded(child: Text('999,99',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                           Container(
+                            height: 30,
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1.5,
+                            ),
+                           ),
+                            Expanded(child: Text('999,99',style: GoogleFonts.oswald(color:Colors.black,fontSize: 16,fontWeight: FontWeight.bold),)),
+                        ],
+                      ),
+                      Divider(
+                        height: 0,
+                        color: Colors.black,
+                        thickness: 1.5,
+                      )
+                      ],
+                    ),
                   ),
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => listaPage()));
+                    }),
+              ),
                Padding(
                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 1),
                  child: GestureDetector(
-                   child: Card(
-                     color: Colors.white,
-                     elevation: 6,
-                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(color: corPadraoApp,width: 1.9),
-                     ),
-                     child: Column(
-                       children: [
-                        Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-                        
-                        Center(child: Text('Saldo Bancario',style: GoogleFonts.oswald(color: corPadraoApp,fontSize: 25),),),
-                        Padding(padding: EdgeInsets.symmetric(vertical: 25)),
-                        Center(child: Text('R\$ 99.999,99',style: GoogleFonts.oswald(fontSize: 42,color: Colors.black),))
-
-                       ],
-                     ),
-                     ),
-                     onTap:(){
-                       Navigator.push(context, MaterialPageRoute(builder: (context) =>listaSegundaPage()));
-                       }),
+               child: Card(
+                 color: Colors.white,
+                 elevation: 6,
+                 shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: BorderSide(color: corPadraoApp,width: 1.9),
+                 ),
+                 child: Column(
+                   children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),),                        
+                    Center(
+                      child: Text('Saldo Bancario',style: GoogleFonts.oswald(color: corPadraoApp,fontSize: 25, fontWeight: FontWeight.bold),),),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 25)),
+                    Center(child: Text('R\$ 99.999,99',style: GoogleFonts.oswald(fontSize: 42, fontWeight: FontWeight.bold, color: Colors.black),)),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 20))
+                   ],
+                 ),
+                 ),
+                 onTap:(){
+                   Navigator.push(context, MaterialPageRoute(builder: (context) =>listaSegundaPage()));
+                   }),
                ),
-                  ],
-                ),
               ],
             ),
            ),
