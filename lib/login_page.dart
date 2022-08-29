@@ -3,12 +3,19 @@ import 'package:app_escola_bites/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'dart:convert';
+import 'package:convert/convert.dart';
+import 'package:crypto/crypto.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override 
   State<LoginPage> createState() => _LoginPageState();
+}
+
+String textToMd5 (String text) {
+  return md5.convert(utf8.encode(text)).toString();
 }
 
 TextEditingController emailControle = TextEditingController();
