@@ -9,6 +9,7 @@ class listaSegundaPage extends StatefulWidget {
 }
 
 class _listaSegundaPageState extends State<listaSegundaPage> {
+  ScrollController controleLista = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +19,20 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
-      body: ListView(
-        shrinkWrap: true,
+      body: ListView.separated(
+        controller: controleLista,
+        itemCount: 1,
+        separatorBuilder: (context, index) => Divider(
+          color: Colors.black,
+          thickness: 1.5,
+          height: 30,
+        ),
+        itemBuilder: ( (context, index) {
+          return ListTile(
+
+          );
+        }),
+        shrinkWrap: true, 
       ),
     );
   }

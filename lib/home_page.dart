@@ -30,14 +30,14 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 1),
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 1),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
+                       EdgeInsets.symmetric(vertical: 15, horizontal: 3),
                   child: GestureDetector(
                       child: Card(
                         color: Colors.white,
@@ -215,6 +215,7 @@ class _HomePageState extends State<HomePage> {
                                   )),
                                   Container(
                                     height: 30,
+
                                     child: VerticalDivider(
                                       color: Colors.black,
                                       thickness: 1.5,
@@ -317,7 +318,7 @@ class _HomePageState extends State<HomePage> {
                                 'Saldo Bancario',
                                 style: GoogleFonts.oswald(
                                     color: corPadraoApp,
-                                    fontSize: 25,
+                                    fontSize: 29,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
