@@ -29,7 +29,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
         ),
         itemBuilder: ( (context, index) {
           return ListTile(
-
+               
           );
         }),
         shrinkWrap: true, 

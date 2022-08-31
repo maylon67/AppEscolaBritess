@@ -8,6 +8,7 @@ String tipo = '';
 String arrecadado = '';
 String atingido = '';
 String objetivo = '';
+String imagemNumeroSaldo = '';
 
  Saldos(
  this.saldoPessoal,
@@ -16,7 +17,8 @@ String objetivo = '';
  this.arrecadado,
  this.atingido,
  this.objetivo,
- this.tipo
+ this.tipo,
+ this.imagemNumeroSaldo,
  );
  Saldos.fromJson(Map <String , dynamic> json) {
   saldoPessoal =json ['saldo_pessoa'];
@@ -26,6 +28,7 @@ String objetivo = '';
   atingido = json['atingido'];
   objetivo = json['objetivo'];
   tipo = json['tipo'];
+  imagemNumeroSaldo =json['imagem_do_numero_em_saldo'];
  }
  }
 
