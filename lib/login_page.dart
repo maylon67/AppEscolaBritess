@@ -15,6 +15,7 @@ class LoginPage extends StatefulWidget {
 
 String textToMd5(String text) {
   return md5.convert(utf8.encode(text)).toString();
+  print(' $text');
 }
 
 TextEditingController emailControle = TextEditingController();
@@ -41,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 40,
+                          height: 42,
                         ),
                         Image.asset(
                           'lib/assets/escolaa.png',
@@ -52,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           'Formandos 2024',
                           style: GoogleFonts.oswald(
-                              color: Color(0xFF083D99), fontSize: 29),
+                              color: Color(0xFF083D99), fontSize: 30),
                         ),
                         SizedBox(
                           height: 90,
@@ -115,8 +116,8 @@ class _LoginPageState extends State<LoginPage> {
                                     estaObscuro
                                         ? Icons.visibility
                                         : Icons.visibility_off,
-                                    color: corPadraoApp,
-                                  )),
+                                    color: Colors.red,
+                                  ),),
                               labelText: 'Sua Senha',
                               labelStyle: GoogleFonts.oswald(
                                 color: Color(0xff083d99),
@@ -155,23 +156,23 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.symmetric(vertical: 125)),
+                        Padding(padding: EdgeInsets.symmetric(vertical: 125),),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(
                               'lib/assets/bisoft.png',
-                              height: 40,
-                              width: 40,
+                              height: 42,
+                              width: 42,
                             ),
                             SizedBox(
                               width: 13,
                             ),
                             Text(
-                              'Desenvolvido por BISOFT',
+                              'Desenvolvido Por BISOFT',
                               style: GoogleFonts.oswald(
                                   fontSize: 15,
-                                  color: Color.fromARGB(255, 0, 0, 0)),
+                                  color: Color.fromARGB(255, 0, 0, 0),),
                             ),
                           ],
                         ),

@@ -21,7 +21,6 @@ class _HomePageState extends State<HomePage> {
         title: Text(
           'Seja bem vindo Usuario!',
           style: GoogleFonts.oswald(fontSize: 25),
-
         ),
         backgroundColor: Color(0xFFF52314),
         centerTitle: true,
@@ -46,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           side: BorderSide(
                             color: corPadraoApp,
-                            width: 1.9,
+                            width: 2.5,
                           ),
                         ),
                         child: Column(
@@ -65,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                               child: Padding(
                                 padding: EdgeInsets.symmetric(vertical: 0),
                                 child: Text(
-                                  'R\$ 98.996,98',
+                                  'R\$ 498.986,98',
                                   style: GoogleFonts.oswald(
                                       fontSize: 42,
                                       fontWeight: FontWeight.bold,
@@ -122,8 +121,10 @@ class _HomePageState extends State<HomePage> {
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  )),
+                                        fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -175,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
-                                  )),
+                                  ),),
                                 ],
                               ),
                             ),
@@ -196,8 +197,9 @@ class _HomePageState extends State<HomePage> {
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  )),
+                                        fontWeight: FontWeight.bold,
+                                        ),
+                                  ),),
                                   Container(
                                     height: 30,
                                     child: VerticalDivider(
@@ -215,7 +217,6 @@ class _HomePageState extends State<HomePage> {
                                   )),
                                   Container(
                                     height: 30,
-
                                     child: VerticalDivider(
                                       color: Colors.black,
                                       thickness: 1.5,
@@ -260,7 +261,7 @@ class _HomePageState extends State<HomePage> {
                                       child: Text(
                                     '999,99',
                                     style: GoogleFonts.oswald(
-                                        color: Colors.black,
+                                        color: Color.fromARGB(255, 16, 16, 16),
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   )),

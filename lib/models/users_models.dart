@@ -31,4 +31,3 @@ String imagemNumeroSaldo = '';
   imagemNumeroSaldo =json['imagem_do_numero_em_saldo'];
  }
  }
-

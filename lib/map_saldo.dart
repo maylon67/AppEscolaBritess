@@ -13,4 +13,6 @@ MapSD jsonTest = {
 'tipo': 'tipo',
 },
   ],
+  'segunda_lista': [
+  ],
 };

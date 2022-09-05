@@ -25,11 +25,12 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
         separatorBuilder: (context, index) => Divider(
           color: Colors.black,
           thickness: 1.5,
+          indent: 2.5,
           height: 30,
         ),
         itemBuilder: ( (context, index) {
           return ListTile(
-               
+               isThreeLine: false,
           );
         }),
         shrinkWrap: true, 
