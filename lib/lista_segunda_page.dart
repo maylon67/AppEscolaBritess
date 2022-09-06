@@ -1,5 +1,6 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class listaSegundaPage extends StatefulWidget {
   const listaSegundaPage({ Key? key }) : super(key: key);
@@ -15,26 +16,25 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
-        title: Text('Segunda Lista'),
+        title: Text('Seu Extrato Bancario',style: GoogleFonts.abel(),),
         backgroundColor: corPadraoApp,
         centerTitle: true,
+
       ),
-      body: ListView.separated(
-        controller: controleLista,
-        itemCount: 1,
-        separatorBuilder: (context, index) => Divider(
-          color: Colors.black,
-          thickness: 1.5,
-          indent: 2.5,
-          height: 30,
-        ),
-        itemBuilder: ( (context, index) {
-          return ListTile(
-               isThreeLine: false,
-          );
-        }),
-        shrinkWrap: true, 
+      body:SafeArea(
+        child: SingleChildScrollView(
+     child: Padding(padding: EdgeInsets.symmetric(vertical: 15,),
+     child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(padding: EdgeInsets.symmetric(vertical: 15,horizontal: 5,),)
+
+          ],
+     ),
+     ),
       ),
-    );
+      ),
+    );   
   }
 }
