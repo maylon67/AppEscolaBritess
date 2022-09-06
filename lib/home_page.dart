@@ -1,12 +1,15 @@
 import 'package:app_escola_bites/lista_page.dart';
 import 'package:app_escola_bites/lista_segunda_page.dart';
+import 'package:app_escola_bites/models/users_models.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:app_escola_bites/app_config.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+ // const HomePage({Key? key}) : super(key: key);
+   final SeuSaldo objetivo;
+    HomePage(SeuSaldo this.objetivo);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -156,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                       child: Text(
-                                    '2.260,00',
+                                    widget.objetivo.toString(),
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
