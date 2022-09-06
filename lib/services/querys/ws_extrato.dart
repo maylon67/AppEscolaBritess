@@ -1,7 +1,8 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/models/users_models.dart';
+import 'package:app_escola_bites/services/ws_config.dart';
 
-/*class WsFinanceiro{
+class WsFinanceiro{
 
   Future<List<SeuSaldo>> getCaixa() async{
 
@@ -14,7 +15,7 @@ import 'package:app_escola_bites/models/users_models.dart';
       List<SeuSaldo> contas = [];
       
       maps.forEach((element) {
-        contas.add(SeuSaldo.fromMap(element));
+       // contas.add(SeuSaldo.fromMap(element));
       });
       return contas;
     } catch(e) {
@@ -22,4 +23,4 @@ import 'package:app_escola_bites/models/users_models.dart';
       return [];
     }
   }
-}*/
+}
