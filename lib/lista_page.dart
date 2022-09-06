@@ -40,7 +40,7 @@ side: BorderSide(color: corPadraoApp,width: 1.5),
 ),
 title: Text('Seu Saldo', style: GoogleFonts.archivo(fontSize: 25,color: Colors.black,fontWeight: FontWeight.bold),),
 onTap: (){
-  
+
 },
 contentPadding: EdgeInsets.symmetric(horizontal: 25),
 autofocus: true,

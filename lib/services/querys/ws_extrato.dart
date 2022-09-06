@@ -7,7 +7,7 @@ class WsFinanceiro{
   Future<List<SeuSaldo>> getCaixa() async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: 'http://localhost:8000/controller/getSaldoCaixa?cdcaixa=16', duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: 'http://localhost:1522/controller/getSaldoCaixa?cdcaixa=16', duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       

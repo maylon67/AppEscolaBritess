@@ -13,7 +13,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
         title: Text('Segunda Lista'),
         backgroundColor: corPadraoApp,
