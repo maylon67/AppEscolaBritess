@@ -1,6 +1,6 @@
 import 'package:app_escola_bites/app_config.dart';
 
- class Saldos{
+ class SeuSaldo{
 String saldoPessoal = '';
 String mensalidade ='';
 String rifa='';
@@ -10,7 +10,7 @@ String atingido = '';
 String objetivo = '';
 String imagemNumeroSaldo = '';
 
- Saldos(
+ SeuSaldo(
  this.saldoPessoal,
  this.rifa,
  this.mensalidade,
@@ -20,7 +20,7 @@ String imagemNumeroSaldo = '';
  this.tipo,
  this.imagemNumeroSaldo,
  );
- Saldos.fromJson(Map <String , dynamic> json) {
+ SeuSaldo.fromJson(Map <String , dynamic> json) {
   saldoPessoal =json ['saldo_pessoa'];
   rifa =json['rifa'];
   mensalidade = json['mensalidade'];

@@ -14,8 +14,8 @@ class LoginPage extends StatefulWidget {
 }
 
 String textToMd5(String text) {
-  return md5.convert(utf8.encode(text)).toString();
   print(' $text');
+  return md5.convert(utf8.encode(text)).toString();
 }
 
 TextEditingController emailControle = TextEditingController();
