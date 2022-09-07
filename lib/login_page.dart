@@ -20,7 +20,7 @@ String textToMd5(String text) {
 
 TextEditingController emailControle = TextEditingController();
 TextEditingController senhaControle = TextEditingController();
-TextEditingController userControle = TextEditingController();
+TextEditingController userControlle = TextEditingController(); 
 
 class _LoginPageState extends State<LoginPage> {
   bool estaObscuro = true;

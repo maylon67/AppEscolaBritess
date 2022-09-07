@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                                   Container(
                                     height: 30,
                                     child: VerticalDivider(
-                                      color: Colors.black,
+                                      color: Color.fromRGBO(0, 0, 0, 1),
                                       thickness: 1.5,
                                     ),
                                   ),
@@ -178,7 +178,8 @@ class _HomePageState extends State<HomePage> {
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                        ),
                                   ),),
                                 ],
                               ),
