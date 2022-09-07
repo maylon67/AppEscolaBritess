@@ -93,7 +93,7 @@ class WsExtratos{
         extrato.add(SeuSaldo.fromJson(element));
       });
       return extrato;
-    } catch(e) {
+    } catch(e) { 
       print('===  ERROR  getAllMetaCaixa : ${e.toString()} ===');
       return [];
     }
