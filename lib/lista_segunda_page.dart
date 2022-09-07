@@ -28,7 +28,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(padding: EdgeInsets.symmetric(vertical: 15,horizontal: 5,),)
+            Padding(padding: EdgeInsets.symmetric(vertical: 15,horizontal: 5,),),
 
           ],
      ),
