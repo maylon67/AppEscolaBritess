@@ -18,7 +18,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
       appBar: AppBar(
         title: Text(
           'Seu Extrato Bancario',
-          style: GoogleFonts.abel(),
+          style: GoogleFonts.rubikMonoOne(fontSize: 17),
         ),
         backgroundColor: corPadraoApp,
         centerTitle: true,
@@ -30,26 +30,56 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
               vertical: 15,
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    vertical: 15,
+                    vertical: 0,
                     horizontal: 5,
                   ),
                 ),
                 Row(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       crossAxisAlignment: CrossAxisAlignment.center, 
-                       children: [
-                        Divider(
-                            thickness: 2.5,
-                            color: Colors.black,
-                            height: 0,
-                        ),
-                Text('')
-                       ],
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Tipo',
+                      style: GoogleFonts.antonio(
+                        color: corPadraoApp,
+                        fontSize: 22,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                    ),
+                    Text(
+                      'Mensalidade',
+                      style:
+                          GoogleFonts.antonio(fontSize: 22, color: corPadraoApp),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                    ),
+                    Text(
+                      'Data',
+                      style:
+                          GoogleFonts.antonio(fontSize: 22, color: corPadraoApp),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                    ),
+                    Text(
+                      'Movimento Bancario',
+                    style: GoogleFonts.antonio(fontSize: 22,color: corPadraoApp),
+                    ),
+                  ],
+                ),
+                 Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                Divider(
+                  thickness: 2.5,
+                  color: Colors.black,
+                  height: 0,
                 ),
               ],
             ),

@@ -133,11 +133,11 @@ class _LoginPageState extends State<LoginPage> {
                             Expanded(
                               child: RaisedButton(
                                 onPressed: () {
-                                 // Navigator.push(
-                                 //     context,
-                                     // MaterialPageRoute(
-                                     //     builder: (_) => HomePage())
-                                     // );
+                                  Navigator.push(
+                                      context,
+                                     MaterialPageRoute(
+                                          builder: (_) => HomePage())
+                                      );
                                 },
                                 child: Text(
                                   'Login',

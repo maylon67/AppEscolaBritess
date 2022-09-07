@@ -7,9 +7,9 @@ import 'package:ionicons/ionicons.dart';
 import 'package:app_escola_bites/app_config.dart';
 
 class HomePage extends StatefulWidget {
- // const HomePage({Key? key}) : super(key: key);
-   final SeuSaldo objetivo;
-    HomePage(SeuSaldo this.objetivo);
+  const HomePage({Key? key}) : super(key: key);
+   
+  
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                       child: Text(
-                                    widget.objetivo.toString(),
+                                    'hfhufhgfgf',
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
