@@ -17,8 +17,8 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
       backgroundColor: Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
         title: Text(
-          'Seu Extrato Bancario',
-          style: GoogleFonts.rubikMonoOne(fontSize: 17),
+          'Extrato Bancario',
+          style: GoogleFonts.rubikMonoOne(fontSize: 21),
         ),
         backgroundColor: corPadraoApp,
         centerTitle: true,
@@ -82,14 +82,14 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       ),
                     ),
                     Text(
-                      'Movimento Bancario',
+                      'Movime. Bancario',
                     style: GoogleFonts.antonio(fontSize: 22,color: corPadraoApp),
                     ),
                   ],
                 ),
                  Padding(padding: EdgeInsets.symmetric(vertical: 0)),
                 Divider(
-                  thickness: 2.5,
+                  thickness: 1.5,
                   color: Colors.black,
                   height: 0,
                 ),
