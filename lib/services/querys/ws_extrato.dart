@@ -83,7 +83,7 @@ class WsExtratos{
   Future<List<SeuSaldo>> getAllMetaCaixa() async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22/controller/getMetaCaixa?cdcaixa=16', duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getMetaCaixa?cdcaixa=16', duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       
