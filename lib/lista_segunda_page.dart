@@ -47,7 +47,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       'Tipo',
                       style: GoogleFonts.antonio(
                         color: corPadraoApp,
-                        fontSize: 22,
+                        fontSize: 22, 
                       ),
                     ),
                     Padding(
