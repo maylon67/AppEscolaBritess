@@ -27,7 +27,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              vertical: 15,
+              vertical: 0,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -50,24 +50,36 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                         fontSize: 22, 
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
+                    Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        color: Colors.black,
+                        thickness: 1.5,
+                      ),
                     ),
                     Text(
                       'Mensalidade',
                       style:
                           GoogleFonts.antonio(fontSize: 22, color: corPadraoApp),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
+                   Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        color: Colors.black,
+                        thickness: 1.5,
+                      ),
                     ),
                     Text(
                       'Data',
                       style:
                           GoogleFonts.antonio(fontSize: 22, color: corPadraoApp),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
+                   Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        color: Colors.black,
+                        thickness: 1.5,
+                      ),
                     ),
                     Text(
                       'Movimento Bancario',
@@ -75,7 +87,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                     ),
                   ],
                 ),
-                 Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                 Padding(padding: EdgeInsets.symmetric(vertical: 0)),
                 Divider(
                   thickness: 2.5,
                   color: Colors.black,

@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                                     estaObscuro
                                         ? Icons.visibility
                                         : Icons.visibility_off,
-                                    color: Colors.red,
+                                    color: corPadraoApp,
                                   ),),
                               labelText: 'Sua Senha',
                               labelStyle: GoogleFonts.oswald(
