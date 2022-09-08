@@ -20,6 +20,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
           'Extrato Bancario',
           style: GoogleFonts.rubikMonoOne(fontSize: 21),
         ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
@@ -43,6 +44,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 5),),
                     Text(
                       'Tipo',
                       style: GoogleFonts.antonio(
@@ -92,6 +94,27 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   thickness: 1.5,
                   color: Colors.black,
                   height: 0,
+                ),
+                Padding(padding: EdgeInsets.symmetric(vertical: 0)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('R\$ 500.110',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
+                    Container(height: 69,child: VerticalDivider(thickness: 1.5,color: Colors.black,),),
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 5),),
+                    Text('R\$ 230.510',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
+                    Container(height: 50,child: VerticalDivider(thickness: 1.5,color: Colors.black,),),
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 2),),
+                    Text('R\$ 400.150',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
+                    Container(height: 50,child: VerticalDivider(thickness: 1.5,color: Colors.black,),),
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 2),),
+                    Text('R\$ 650.210',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
+                  ],
+                ),
+                Divider(
+                  color: Colors.black,
+                  thickness: 1.5,
                 ),
               ],
             ),

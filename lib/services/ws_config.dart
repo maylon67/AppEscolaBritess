@@ -10,7 +10,7 @@ class WsController{
 
   WsController._internal();
 
-  static String url = 'http://187.49.145.22';
+  static String url = 'http://187.49.145.22:1522';
 
   static Uri toUri(String query) => Uri().resolve(url + query);
 

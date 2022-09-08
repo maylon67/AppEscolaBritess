@@ -49,7 +49,7 @@ selectedColor: corPadraoApp,
 trailing: Text('Saldo Bancario',style: GoogleFonts.itim(),),
           );
         }),
-        shrinkWrap: true,   
+        shrinkWrap: true,
       ),
     );
   }

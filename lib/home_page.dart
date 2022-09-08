@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
-                                  )),
+                                  ),),
                                   Container(
                                     height: 30,
                                     child: VerticalDivider(
