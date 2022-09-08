@@ -4,10 +4,29 @@ import 'package:app_escola_bites/services/ws_config.dart';
 
 class WsExtratos{
 
-  Future<List<SeuSaldo>> getAllSaldoCaixa() async{
+  Future<List<SeuSaldo>> getAllCaixa(int numero) async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getSaldoCaixa?cdcaixa=16', duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getCaixa?email=dudabatistabrites@gmail.com&senha=3FB358DEAB521030689AC5E129454E7B'+numero.toString(), duration: Duration(seconds: 35));
+      
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
+      
+      List maps = response['caixo'];
+      List<SeuSaldo> extrato = [];
+       maps.forEach((element) {
+        extrato.add(SeuSaldo.fromJson(element));
+      });
+      return extrato;
+    } catch(e) {
+      print('===  ERROR  getAllCaixa : ${e.toString()} ===');
+      return [];
+    }
+  }
+
+  Future<List<SeuSaldo>> getAllSaldoCaixa(int numero) async{
+
+    try{
+      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getSaldoCaixa?cdcaixa=16'+numero.toString(), duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       
@@ -23,10 +42,10 @@ class WsExtratos{
     }
   }
 
-  Future<List<SeuSaldo>> getAllSaldoBanco() async{
+  Future<List<SeuSaldo>> getAllSaldoBanco(int numero) async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getSaldoBanco', duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getSaldoBanco'+numero.toString(), duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       
@@ -42,10 +61,10 @@ class WsExtratos{
     }
   }
 
-  Future<List<SeuSaldo>> getAllMovCaixa() async{
+  Future<List<SeuSaldo>> getAllMovCaixa(int numero) async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getMovCaixa?cdcaixa=16', duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getMovCaixa?cdcaixa='+numero.toString(), duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       
@@ -61,10 +80,10 @@ class WsExtratos{
     }
   }
 
-  Future<List<SeuSaldo>> getAllMovBanco() async{
+  Future<List<SeuSaldo>> getAllMovBanco(int numero) async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getMovBanco', duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22:1522/controller/getMovBanco'+numero.toString(), duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       
@@ -80,10 +99,10 @@ class WsExtratos{
     }
   }
 
-  Future<List<SeuSaldo>> getAllMetaCaixa() async{
+  Future<List<SeuSaldo>> getAllMetaCaixa(int numero) async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22/controller/getMetaCaixa?cdcaixa=16', duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: 'http://187.49.145.22/controller/getMetaCaixa?cdcaixa='+numero.toString(), duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       

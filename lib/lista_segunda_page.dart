@@ -44,7 +44,6 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 5),),
                     Text(
                       'Tipo',
                       style: GoogleFonts.antonio(
@@ -61,8 +60,10 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                     ),
                     Text(
                       'Mensalidade',
-                      style:
-                          GoogleFonts.antonio(fontSize: 22, color: corPadraoApp),
+                      style: GoogleFonts.antonio(
+                        fontSize: 22, 
+                        color: corPadraoApp,
+                     ),
                     ),
                    Container(
                       height: 50,
@@ -73,8 +74,10 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                     ),
                     Text(
                       'Data',
-                      style:
-                          GoogleFonts.antonio(fontSize: 22, color: corPadraoApp),
+                      style: GoogleFonts.antonio(
+                       fontSize: 22, 
+                       color: corPadraoApp,
+                     ),
                     ),
                    Container(
                       height: 50,
@@ -84,12 +87,14 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       ),
                     ),
                     Text(
-                      'Movime. Bancario',
-                    style: GoogleFonts.antonio(fontSize: 22,color: corPadraoApp),
+                      'Mov. Bancario',
+                    style: GoogleFonts.antonio(
+                      fontSize: 22,
+                      color: corPadraoApp,
+                      ),
                     ),
                   ],
                 ),
-                 Padding(padding: EdgeInsets.symmetric(vertical: 0)),
                 Divider(
                   thickness: 1.5,
                   color: Colors.black,
@@ -100,19 +105,73 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('R\$ 500.110',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
-                    Container(height: 69,child: VerticalDivider(thickness: 1.5,color: Colors.black,),),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 5),),
-                    Text('R\$ 230.510',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
-                    Container(height: 50,child: VerticalDivider(thickness: 1.5,color: Colors.black,),),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 2),),
-                    Text('R\$ 400.150',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
-                    Container(height: 50,child: VerticalDivider(thickness: 1.5,color: Colors.black,),),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 2),),
-                    Text('R\$ 650.210',style: GoogleFonts.antonio(fontSize:20,color: corPadraoApp),),
+                    Text('R\$ 500.110',
+                    style: GoogleFonts.antonio(
+                      fontSize:20,
+                      color: corPadraoApp,
+                      ),
+                     ),
+                    Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 5,
+                        ),
+                       ),
+                    Text(
+                      'R\$ 230.510',
+                      style: GoogleFonts.antonio(
+                        fontSize:20,
+                        color: corPadraoApp,
+                        ),
+                       ),
+                    Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 2,
+                        ),
+                       ),
+                    Text(
+                      'R\$ 400.150',
+                      style: GoogleFonts.antonio(
+                        fontSize:20,
+                        color: corPadraoApp,
+                        ),
+                       ),
+                    Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 2,
+                        ),
+                       ),
+                    Text(
+                      'R\$ 650.210',
+                      style: GoogleFonts.antonio(
+                        fontSize:20,
+                        color: corPadraoApp,
+                        ),
+                       ),
                   ],
                 ),
                 Divider(
+                  height: 0,
                   color: Colors.black,
                   thickness: 1.5,
                 ),
