@@ -44,11 +44,15 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      'Tipo',
-                      style: GoogleFonts.antonio(
-                        color: corPadraoApp,
-                        fontSize: 22, 
+
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 4),
+                      child: Text(
+                        'Tipo',
+                        style: GoogleFonts.antonio(
+                          color: corPadraoApp,
+                          fontSize: 22, 
+                        ),
                       ),
                     ),
                     Container(

@@ -3,7 +3,6 @@ import 'package:app_escola_bites/models/users_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 
 class WsExtratos{
-
   Future<List<SeuSaldo>> getAllCaixa(int numero) async{
 
     try{

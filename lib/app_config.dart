@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+int numeroDoCaixa = 0;
 typedef MapSD = Map<String, dynamic>;
 
 double altura(BuildContext context) => MediaQuery.of(context).size.height;

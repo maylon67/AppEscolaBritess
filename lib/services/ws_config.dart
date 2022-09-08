@@ -33,6 +33,7 @@ class WsController{
       // print(toUri(query));
       // print(body);
 
+      print(toUri(query));
       await http
           .post(
         toUri(query),
