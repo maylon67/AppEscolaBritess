@@ -2,7 +2,7 @@ import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 import 'package:flutter/material.dart';
 class wsSaldoCaixa{
-  Future<int> getSaldoCaixa(codigoCaixa,valorRifa) async{
+  Future<int> getSaldoCaixa(codigoCaixa,valorRifa) async{ 
 
     try{
       MapSD response = await WsController.executeWsPost(query: '/controller/getCaixa?cdcaixa=' + codigoCaixa, duration: Duration(seconds: 35));
