@@ -1,5 +1,6 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/home_page.dart';
+import 'package:app_escola_bites/services/querys/ws_login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
@@ -15,7 +16,7 @@ class LoginPage extends StatefulWidget {
 
 String textToMd5(String text) {
   print(' $text');
-  return md5.convert(utf8.encode(text)).toString();
+  return md5.convert(utf8.encode(text)).toString().toUpperCase();
 }
 
 TextEditingController emailControle = TextEditingController();
@@ -132,7 +133,8 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Expanded(
                               child: RaisedButton(
-                                onPressed: () {
+                                onPressed: ()async {
+                                  numeroDoCaixa =  await WsLogin().getLogin(emailControle.text, textToMd5(senhaControle.text));
                                   Navigator.push(
                                       context,
                                      MaterialPageRoute(

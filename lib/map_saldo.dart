@@ -1,7 +1,7 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:flutter/material.dart';
 
-MapSD jsonTest = {
+/*MapSD jsonTest = {
   'primeira_lista' : [
 {
 'saldo_pessoa': '999 mil',
@@ -15,4 +15,4 @@ MapSD jsonTest = {
   ],
   'segunda_lista': [
   ],
-};
+};*/

@@ -8,7 +8,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: LoginPage()
   ));
-   var dataToHash = 'toricode.com';
+   var dataToHash = '123456';
 
   var bytesToHash = utf8.encode(dataToHash);
   var md5Digest = md5.convert(bytesToHash);
@@ -18,7 +18,6 @@ void main() {
 }
 class MainDart extends StatefulWidget {
   const MainDart({ Key? key }) : super(key: key);
-
   @override
   State<MainDart> createState() => _MainDartState();
 }
