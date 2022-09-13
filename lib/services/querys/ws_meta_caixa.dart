@@ -1,0 +1,21 @@
+/*import 'package:app_escola_bites/app_config.dart';
+import 'package:app_escola_bites/models/users_models.dart';
+import 'package:app_escola_bites/services/ws_config.dart';
+
+class MetaCaixa{
+  Future<int> getMetaCaixa(int numero) async{
+
+    try{
+      MapSD response = await WsController.executeWsPost(query: '/controller/getMetaCaixa?cdcaixa='+numero.toString(), duration: Duration(seconds: 35));
+      
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
+      
+      String metaCaixa = response['VLRMENSALIDADE'];
+      print(metaCaixa);
+      return int.parse(metaCaixa);
+    } catch(e) { 
+      print('===  ERROR  getAllMetaCaixa : ${e.toString()} ===');
+      return 0;
+    }
+  }
+}*/
