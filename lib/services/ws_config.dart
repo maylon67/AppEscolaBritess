@@ -13,7 +13,6 @@ class WsController {
   static String url = 'http://187.49.145.22:1522';
 
   static Uri toUri(String query) => Uri().resolve(url + query);
-
   static Future<bool> testConnection() async {
     try {
       MapSD response = await executeWsPost(query: '/auth/ping');

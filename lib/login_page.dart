@@ -21,7 +21,7 @@ String textToMd5(String text) {
 
 TextEditingController emailControle = TextEditingController();
 TextEditingController senhaControle = TextEditingController();
-TextEditingController userControlle = TextEditingController(); 
+TextEditingController userControlle = TextEditingController();
 
 class _LoginPageState extends State<LoginPage> {
   bool estaObscuro = true;
@@ -61,9 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Card(
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                              side: BorderSide(
-                                  color: Color(0xff083d99), width: 2.5),),
+                            borderRadius: BorderRadius.circular(25),
+                            side: BorderSide(
+                                color: Color(0xff083d99), width: 2.5),
+                          ),
                           child: TextFormField(
                             controller: emailControle,
                             decoration: InputDecoration(
@@ -110,15 +111,16 @@ class _LoginPageState extends State<LoginPage> {
                                 color: corPadraoApp,
                               ),
                               suffixIcon: IconButton(
-                                  onPressed: () {
-                                    setState(() => estaObscuro = !estaObscuro);
-                                  },
-                                  icon: Icon(
-                                    estaObscuro
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
-                                    color: corPadraoApp,
-                                  ),),
+                                onPressed: () {
+                                  setState(() => estaObscuro = !estaObscuro);
+                                },
+                                icon: Icon(
+                                  estaObscuro
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: corPadraoApp,
+                                ),
+                              ),
                               labelText: 'Sua Senha',
                               labelStyle: GoogleFonts.oswald(
                                 color: Color(0xff083d99),
@@ -133,13 +135,15 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Expanded(
                               child: RaisedButton(
-                                onPressed: ()async {
-                                  numeroDoCaixa =  await WsLogin().getLogin(emailControle.text, textToMd5(senhaControle.text));
+                                onPressed: () async {
+                                  numeroDoCaixa = await WsLogin().getLogin(
+                                      emailControle.text,
+                                      textToMd5(senhaControle.text));
                                   Navigator.push(
-                                      context,
-                                     MaterialPageRoute(
-                                          builder: (_) => HomePage()),
-                                      );
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => HomePage()),
+                                  );
                                 },
                                 child: Text(
                                   'Login',
@@ -150,16 +154,18 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 color: corPadraoApp,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25),
-                                    side: BorderSide(
-                                        color: Color.fromARGB(255, 1, 1, 1),
-                                        width: 1.5),
-                                        ),
+                                  borderRadius: BorderRadius.circular(25),
+                                  side: BorderSide(
+                                      color: Color.fromARGB(255, 1, 1, 1),
+                                      width: 1.5),
+                                ),
                               ),
                             ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.symmetric(vertical: 125),),
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 125),
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -174,8 +180,9 @@ class _LoginPageState extends State<LoginPage> {
                             Text(
                               'Desenvolvido Por BISOFT',
                               style: GoogleFonts.oswald(
-                                  fontSize: 15,
-                                  color: Color.fromARGB(255, 0, 0, 0),),
+                                fontSize: 15,
+                                color: Color.fromARGB(255, 0, 0, 0),
+                              ),
                             ),
                           ],
                         ),

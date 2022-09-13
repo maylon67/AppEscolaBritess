@@ -9,7 +9,7 @@ class wsSaldoCaixa{
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return 0;
       
-      String saldoCaixa = response['DTCAIXA'];
+      String saldoCaixa = response[{"DTCAIXA":"16/08/2022","VLRSLDFIM":"70"}];
       print(saldoCaixa);
       
       return int.parse(saldoCaixa);

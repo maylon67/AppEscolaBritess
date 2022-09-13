@@ -1,4 +1,4 @@
-import 'package:app_escola_bites/services/ws_config.dart';
+import './../ws_config.dart';
 
 import '../../app_config.dart';
 
