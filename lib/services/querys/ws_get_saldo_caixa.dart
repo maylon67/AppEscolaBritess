@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class wsSaldoCaixa{
   Future<int> getSaldoCaixa(codigoCaixa,valorRifa) async{ 
     try{
-      MapSD response = await WsController.executeWsPost(query: '/controller/getCaixa?cdcaixa=' + codigoCaixa, duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: '/controller/getSaldoCaixa?cdcaixa=' + codigoCaixa, duration: Duration(seconds: 35));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return 0;
       String saldoCaixa = response['DTCAIXA'];
