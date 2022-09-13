@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:app_escola_bites/app_config.dart';
 import 'package:http/http.dart' as http;
 
-class WsController{
+class WsController {
   static final WsController _singleton = WsController._internal();
 
   factory WsController() => _singleton;
@@ -24,10 +24,10 @@ class WsController{
     }
   }
 
-  static Future<MapSD> executeWsPost({
-    required String query,
-    String body = '',
-    Duration duration = const Duration(seconds: 15)}) async {
+  static Future<MapSD> executeWsPost(
+      {required String query,
+      String body = '',
+      Duration duration = const Duration(seconds: 15)}) async {
     try {
       String returnValue = '';
       // print(toUri(query));
@@ -36,20 +36,19 @@ class WsController{
       print(toUri(query));
       await http
           .post(
-        toUri(query),
-        body: body,
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-      )
+            toUri(query),
+            body: body,
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+            },
+          )
           .timeout(duration)
           .then(
             (http.Response response) {
-          returnValue = utf8.decode(response.bodyBytes);
-        },
-      );
-
+              returnValue = utf8.decode(response.bodyBytes);
+            },
+          );
 
       print(returnValue);
       return jsonDecode(returnValue);

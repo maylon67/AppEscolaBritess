@@ -46,7 +46,7 @@ contentPadding: EdgeInsets.symmetric(horizontal: 25),
 autofocus: true,
 enabled: false,
 selectedColor: corPadraoApp,
-trailing: Text('Saldo Bancario',style: GoogleFonts.itim(),),
+trailing: Text('Saldo Bancario',style: GoogleFonts.itim(fontSize:23,),),
           );
         }),
         shrinkWrap: true,
