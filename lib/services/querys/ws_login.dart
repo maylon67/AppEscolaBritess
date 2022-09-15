@@ -1,6 +1,7 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/models/seu_saldo_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
+
 class WsLogin {
   Future<int> getLogin(String email, String senha) async {
     try {
@@ -16,7 +17,7 @@ class WsLogin {
       print(codigoCaixa);
       return int.parse(codigoCaixa);
     } catch (e) {
-      print('===  ERROR  getAllCaixa : ${e.toString()} ===');
+      print('===  ERROR  getLogin : ${e.toString()} ===');
       return 0;
     }
   }
