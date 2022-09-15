@@ -6,7 +6,7 @@ class MetaCaixa{
   Future<int> getMetaCaixa(int numero) async{
 
     try{
-      MapSD response = await WsController.executeWsPost(query: '/controller/getMetaCaixa?cdcaixa='+numero.toString(), duration: Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: '/controller/getMetaCaixa?cdcaixa='+numero.toString(), duration: Duration(seconds: 60));
       
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return 0;
       
