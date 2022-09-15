@@ -1,18 +1,15 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/models/movimento_models.dart';
+import 'package:app_escola_bites/models/movimento_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 import 'package:flutter/material.dart';
 
 class MovimentoBanco {
   Future<String> getMoviBanco() async {
     try {
-      MapSD response = await WsController.executeWsPost(
-          query: '/controller/getMovBanco',
-          duration: const Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: '/controller/getMovBanco', duration: const Duration(seconds: 35));
 
-      if (response.containsKey('error') ||
-          response.containsKey('connection') ||
-          response.isEmpty) return '';
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return '';
       String movimentoBanco = '';
 
       List maps = response[
@@ -22,7 +19,7 @@ class MovimentoBanco {
 
       return movBanco.toString();
     } catch (e) {
-      print('===  ERROR  getAllCaixa : ${e.toString()} ===');
+      print('===  ERROR  getMovBanco : ${e.toString()} ===');
       return '';
     }
   }

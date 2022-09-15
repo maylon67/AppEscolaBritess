@@ -12,7 +12,7 @@ Future<int> getLogin() async{
       print(caixa);
       return int.parse(caixa);
     } catch(e) {
-      print('===  ERROR  getLogin : ${e.toString()} ===');
+      print('===  ERROR  getSaldoBanco : ${e.toString()} ===');
       return 0;
     }
   }

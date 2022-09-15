@@ -14,7 +14,7 @@ class MetaCaixa{
       print(metaCaixa);
       return int.parse(metaCaixa);
     } catch(e) { 
-      print('===  ERROR  getAllMetaCaixa : ${e.toString()} ===');
+      print('===  ERROR  getMetaCaixa : ${e.toString()} ===');
       return 0;
     }
   }

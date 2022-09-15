@@ -11,7 +11,7 @@ class wsSaldoCaixa{
       print(saldoCaixa);
       return int.parse(saldoCaixa);
     } catch(e) {
-      print('===  ERROR  getAllCaixa : ${e.toString()} ===');
+      print('===  ERROR  getSaldoCaixa : ${e.toString()} ===');
       return 0;
     }
   }
