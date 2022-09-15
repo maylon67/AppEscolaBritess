@@ -14,7 +14,7 @@ class WsLogin{
       
       return int.parse(caixa);
     } catch(e) {
-      print('===  ERROR  getAllCaixa : ${e.toString()} ===');
+      print('===  ERROR  getLogin : ${e.toString()} ===');
       return 0;
     }
   }
