@@ -11,7 +11,7 @@ class MovimentoBanco {
 
       String movimentoBanco = response[{
         "movimentos": [
-          {
+          { 
             "DATA": "31/08/2022",
             "OPERACAO": "MENSALIDADE",
             "VLRMOVBCO": "880",
