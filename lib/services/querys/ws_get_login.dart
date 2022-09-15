@@ -12,7 +12,7 @@ class WsLogin{
       String caixa = response['CDCAIXA'];
       print(caixa);
       
-      return int.parse(caixa);
+      return int.parse(caixa); 
     } catch(e) {
       print('===  ERROR  getLogin : ${e.toString()} ===');
       return 0;
