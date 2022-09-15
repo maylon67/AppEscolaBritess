@@ -5,13 +5,9 @@ import 'package:flutter/material.dart';
 class MovimentoBanco {
   Future<int> getMoviBanco() async {
     try {
-      MapSD response = await WsController.executeWsPost(
-          query: '/controller/getMovBanco',
-          duration: const Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(query: '/controller/getMovBanco', duration: const Duration(seconds: 35));
 
-      if (response.containsKey('error') ||
-          response.containsKey('connection') ||
-          response.isEmpty) return 0;
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return 0;
 
       String movimentoBanco = response[{
         "movimentos": [

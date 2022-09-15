@@ -1,6 +1,6 @@
 import 'package:app_escola_bites/lista_page.dart';
 import 'package:app_escola_bites/lista_segunda_page.dart';
-import 'package:app_escola_bites/models/users_models.dart';
+import 'package:app_escola_bites/models/seu_saldo_models.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
