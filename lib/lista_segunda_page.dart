@@ -45,9 +45,9 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 4),
+                      padding: EdgeInsets.symmetric(horizontal: 14),
                       child: Text(
-                        'Tipo',
+                        'Data',
                         style: GoogleFonts.antonio(
                           color: corPadraoApp,
                           fontSize: 22,
@@ -62,7 +62,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       ),
                     ),
                     Text(
-                      'Mensalidade',
+                      'Operação',
                       style: GoogleFonts.antonio(
                         fontSize: 22,
                         color: corPadraoApp,
@@ -76,7 +76,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       ),
                     ),
                     Text(
-                      'Data',
+                      'Credito',
                       style: GoogleFonts.antonio(
                         fontSize: 22,
                         color: corPadraoApp,
@@ -89,11 +89,14 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                         thickness: 1.5,
                       ),
                     ),
-                    Text(
-                      'Mov. Bancario',
-                      style: GoogleFonts.antonio(
-                        fontSize: 22,
-                        color: corPadraoApp,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 37),
+                      child: Text(
+                        'Débito',
+                        style: GoogleFonts.antonio(
+                          fontSize: 22,
+                          color: corPadraoApp,
+                        ),
                       ),
                     ),
                   ],
@@ -109,7 +112,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'R\$ 500.110',
+                      '12/05/98',
                       style: GoogleFonts.antonio(
                         fontSize: 20,
                         color: corPadraoApp,
@@ -128,7 +131,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       ),
                     ),
                     Text(
-                      'R\$ 230.510',
+                      'Mensalidade',
                       style: GoogleFonts.antonio(
                         fontSize: 20,
                         color: corPadraoApp,
@@ -147,7 +150,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       ),
                     ),
                     Text(
-                      'R\$ 400.150',
+                      'Tipo = D',
                       style: GoogleFonts.antonio(
                         fontSize: 20,
                         color: corPadraoApp,
@@ -166,7 +169,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                       ),
                     ),
                     Text(
-                      'R\$ 650.210',
+                      'Tipo = C',
                       style: GoogleFonts.antonio(
                         fontSize: 20,
                         color: corPadraoApp,

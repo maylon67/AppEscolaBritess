@@ -8,8 +8,7 @@ import 'package:app_escola_bites/app_config.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-   
- 
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -26,7 +25,8 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Color(0xFFF52314),
         centerTitle: true,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.circular(25)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusDirectional.circular(25)),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -37,8 +37,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding:
-                       EdgeInsets.symmetric(vertical: 15, horizontal: 3),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 3),
                   child: GestureDetector(
                       child: Card(
                         color: Colors.white,
@@ -118,14 +117,14 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Expanded(
-                                      child: Text(
-                                    'Rifa',
-                                    style: GoogleFonts.oswald(
+                                    child: Text(
+                                      'Rifa',
+                                      style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -157,13 +156,14 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Expanded(
-                                      child: Text(
-                                    'hfhufhgfgf',
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  ),),
+                                    child: Text(
+                                      'hfhufhgfgf',
+                                      style: GoogleFonts.oswald(
+                                          color: Colors.black,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
                                   Container(
                                     height: 30,
                                     child: VerticalDivider(
@@ -172,14 +172,15 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Expanded(
-                                      child: Text(
-                                    '1.400,00',
-                                    style: GoogleFonts.oswald(
+                                    child: Text(
+                                      '1.400,00',
+                                      style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
-                                        ),
-                                  ),),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -195,14 +196,15 @@ class _HomePageState extends State<HomePage> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Expanded(
-                                      child: Text(
-                                    'Arrecadado',
-                                    style: GoogleFonts.oswald(
+                                    child: Text(
+                                      'Arrecadado',
+                                      style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
-                                        ),
-                                  ),),
+                                      ),
+                                    ),
+                                  ),
                                   Container(
                                     height: 30,
                                     child: VerticalDivider(
@@ -286,11 +288,11 @@ class _HomePageState extends State<HomePage> {
                                 ],
                               ),
                             ),
-                          //  Divider(
-                          //    height: 0,
-                          //    color: Colors.black,
-                          //    thickness: 1.5,
-                          //  )
+                            //  Divider(
+                            //    height: 0,
+                            //    color: Colors.black,
+                            //    thickness: 1.5,
+                            //  )
                           ],
                         ),
                       ),
