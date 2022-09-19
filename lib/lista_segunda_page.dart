@@ -312,149 +312,298 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   thickness: 1.5,
                   color: Colors.black,
                 ),
-                Container(
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-               Container(
+                Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-               Container(
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-                Container(
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-                Container(
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-                Container(
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-                Container(
+                Divider(color: Colors.black,height: 0,thickness: 1.5,),
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-                Container(
+                Divider(height: 0,thickness:1.5,color: Colors.black),
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-                Container(
+                Divider(color: Colors.black,thickness: 1.5,height: 0,),
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
+                      height: 50,
+                      child: VerticalDivider(
+                        thickness: 1.5,
+                        color: Colors.black,
+                        ),
+                       ),
+                  ],
                 ),
-                Container(
+                Divider(color: Colors.black,height: 0,thickness: 1.5,),
+                 Divider(height: 0,color: Colors.black,thickness: 1.5,),
+                Row(
+                  children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 38.5)),
+                    Container(
+                          height: 50,
+                          child: VerticalDivider(
+                            thickness: 1.5,
+                            color: Colors.black,
+                            ),
+                           ),
+                           Padding(padding: EdgeInsets.symmetric(horizontal: 44)),
+                           Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
-                ),
-                Container(
+                       Padding(padding: EdgeInsets.symmetric(horizontal: 40.5)),
+                       Container(
                       height: 50,
                       child: VerticalDivider(
                         thickness: 1.5,
                         color: Colors.black,
                         ),
                        ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
-                ),
-                Container(
-                      height: 50,
-                      child: VerticalDivider(
-                        thickness: 1.5,
-                        color: Colors.black,
-                        ),
-                       ),
-                Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
+                  ],
                 ),
               ],
             ),
