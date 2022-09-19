@@ -4,7 +4,7 @@ import 'package:app_escola_bites/models/movimento_models.dart';
 import 'package:app_escola_bites/models/seu_saldo_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 
-class WsExtratos{
+class WsMetaCaixa{
   Future<List<Movimento>> getAllMetaCaixa(int numero) async{
 
     try{

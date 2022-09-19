@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color.fromARGB(255, 255, 247, 247),
       appBar: AppBar(
         title: Text(
-          'Seja bem vindo Usuario!',
+          'Seja bem vindo, Usuario!',
           style: GoogleFonts.oswald(fontSize: 25),
         ),
         backgroundColor: Color(0xFFF52314),
@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      'hfhufhgfgf',
+                                      '2.260,00',
                                       style: GoogleFonts.oswald(
                                           color: Colors.black,
                                           fontSize: 16,

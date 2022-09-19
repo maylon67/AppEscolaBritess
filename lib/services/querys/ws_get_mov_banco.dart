@@ -4,23 +4,27 @@ import 'package:app_escola_bites/models/movimento_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 import 'package:flutter/material.dart';
 
-class MovimentoBanco {
-  Future<String> getMoviBanco() async {
+class WsMovimentoBanco {
+  Future<List<Movimento>> getMoviBanco() async {
     try {
+      //Recebendo JSON
+      // JSON dentro do response
       MapSD response = await WsController.executeWsPost(query: '/controller/getMovBanco', duration: const Duration(seconds: 35));
 
-      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return '';
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
       String movimentoBanco = '';
 
-      List maps = response[
-          '{"movimentos":[{"DATA":"31/08/2022","OPERACAO":"MENSALIDADE","VLRMOVBCO":"880","TIPO":"D"},{"DATA":"31/08/2022","OPERACAO":"RIFA","VLRMOVBCO":"700","TIPO":"D"},{"DATA":"30/08/2022","OPERACAO":"MENSALIDADE","VLRMOVBCO":"120","TIPO":"D"},{"DATA":"29/08/2022","OPERACAO":"MENSALIDADE","VLRMOVBCO":"300","TIPO":"D"},{"DATA":"26/08/2022","OPERACAO":"MENSALIDADE","VLRMOVBCO":"120","TIPO":"D"},{"DATA":"23/08/2022","OPERACAO":"MENSALIDADE","VLRMOVBCO":"60","TIPO":"D"},{"DATA":"19/08/2022","OPERACAO":"MENSALIDADE","VLRMOVBCO":"120","TIPO":"D"},{"DATA":"19/08/2022","OPERACAO":"FESTA JUNINA","VLRMOVBCO":"3091.8","TIPO":"D"},{"DATA":"19/08/2022","OPERACAO":"FESTA JUNINA","VLRMOVBCO":"63.5","TIPO":"D"},{"DATA":"17/08/2022","OPERACAO":"FESTA JUNINA","VLRMOVBCO":"24.1","TIPO":"D"},{"DATA":"16/08/2022","OPERACAO":"FESTA JUNINA","VLRMOVBCO":"1996.42","TIPO":"D"},{"DATA":"16/08/2022","OPERACAO":"MENSALIDADE","VLRMOVBCO":"140","TIPO":"D"}]}'];
+      // RESPONSE['NOME_CAMPO']
+      // NAO VAI O JSON COMPLETO
+      // response['movimento']
+      List maps = response['movimentos'];
       List<Movimento> movBanco = [];
       maps.forEach((element) {movBanco.add(Movimento.fromJson(element)); });
 
-      return movBanco.toString();
+      return movBanco;
     } catch (e) {
       print('===  ERROR  getMovBanco : ${e.toString()} ===');
-      return '';
+      return [];
     }
   }
 }
