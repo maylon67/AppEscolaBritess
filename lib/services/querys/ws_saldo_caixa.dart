@@ -1,4 +1,4 @@
-/*import 'package:app_escola_bites/app_config.dart';
+import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 
 class wsSaldoCaixa{
@@ -18,4 +18,4 @@ class wsSaldoCaixa{
       return 0;
     }
   }
-}*/
+}
