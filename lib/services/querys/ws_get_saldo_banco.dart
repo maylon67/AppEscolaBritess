@@ -15,7 +15,7 @@ Future<List<MovimentoSaldoBanco>> getSaldoBanco() async{
       List <MovimentoSaldoBanco> buscaSaldoBanco = [];
       WsSaldoBanco movimentosSaldoBanco = WsSaldoBanco(dataBanco, valoresDeFim);
 
-      return buscaSaldoBanco;
+      return buscaSaldoBanco; 
     } catch(e) {
       print('===  ERROR  getSaldoBanco : ${e.toString()} ===');
       return [];
