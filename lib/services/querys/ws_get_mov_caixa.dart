@@ -1,21 +1,28 @@
-import './../ws_config.dart';
+import 'dart:convert';
 
-import '../../app_config.dart';
+import 'package:app_escola_bites/models/movimento_caixa_models.dart';
+import 'package:app_escola_bites/services/ws_config.dart';
 
-class Caixa {
-  Future<int> getMovCaixa(codigoCaixa, valorRifa) async {
+import 'package:app_escola_bites/app_config.dart';
+
+class WsMovCaixa {
+  Future<List<MovCaixa>> getMovCaixa(codigoCaixa, valorRifa) async {
     try {
       MapSD response = await WsController.executeWsPost(query: '/controller/getMovCaixa?cdcaixa=' + codigoCaixa, duration: const Duration(seconds: 35));
 
-      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return 0;
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
 
-      String saldoCaixa = response[{"movimentos":[{"DATA":"16/08/2022","OPERACAO":"MENSALIDADE","VALOR":"70","TIPO":"D"}]}];
-      print(saldoCaixa);
+      String movimentoCaixa = '';
+      List maps = response['movimentos'];
+      List<MovCaixa> movimentosCaixa = [];
+      maps.forEach((element) {
+        movimentosCaixa.add(MovCaixa.fromJson(element));
+      });
 
-      return int.parse(saldoCaixa);
+      return movimentosCaixa;
     } catch (e) {
       print('===  ERROR  getMovCaixa : ${e.toString()} ===');
-      return 0;
+      return [];
     }
   }
 }
