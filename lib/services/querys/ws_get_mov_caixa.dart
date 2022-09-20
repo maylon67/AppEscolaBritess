@@ -9,16 +9,19 @@ import 'package:app_escola_bites/app_config.dart';
 class WsMovCaixa {
   Future<List<MovCaixa>> getMovCaixa(codigoCaixa, valorRifa) async {
     try {
-      MapSD response = await WsController.executeWsPost(query: '/controller/getMovCaixa?cdcaixa=' + codigoCaixa, duration: const Duration(seconds: 35));
+      MapSD response = await WsController.executeWsPost(
+          query: '/controller/getMovCaixa?cdcaixa=' + codigoCaixa,
+          duration: const Duration(seconds: 35));
 
-      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
+      if (response.containsKey('error') ||
+          response.containsKey('connection') ||
+          response.isEmpty) return [];
 
       String movimentoCaixa = '';
       List maps = response['movimentos'];
       List<MovCaixa> movimentosCaixa = [];
       maps.forEach((element) {
         movimentosCaixa.add(MovCaixa.fromJson(element));
-        
       });
 
       return movimentosCaixa;

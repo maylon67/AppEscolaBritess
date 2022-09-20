@@ -20,7 +20,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
           'Extrato Bancario',
           style: GoogleFonts.rubikMonoOne(fontSize: 21),
         ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
