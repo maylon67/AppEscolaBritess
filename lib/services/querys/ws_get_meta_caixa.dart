@@ -4,23 +4,21 @@ import 'package:app_escola_bites/models/seu_saldo_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 
 class WsMetaCaixa{
-  WsMetaCaixa(String mensalidade, String rifa);
-
-  Future<List<MetaCaixa>> getMetaCaixa(int numero) async{
+  // WSMetaCaixa(String mensalidade, String rifa);
+  Future<MetaCaixa> getMetaCaixa(int numero) async{
 
     try{
       MapSD response = await WsController.executeWsPost(query: '/controller/getMetaCaixa?cdcaixa='+numero.toString(), duration: Duration(seconds: 35));
       
-      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return MetaCaixa("", "");
       
       String mensalidade = response['VLRMENSALIDADE'];
       String rifa = response['VLRRIFA'];
-      WsMetaCaixa metaCaixa = WsMetaCaixa(mensalidade, rifa);
-      List<MetaCaixa> metaCaixaa = [];
-      return metaCaixaa;
+      MetaCaixa metaCaixa = MetaCaixa(mensalidade, rifa);
+      return metaCaixa;
     } catch(e) { 
       print('===  ERROR  getMetaCaixa : ${e.toString()} ===');
-      return [];
+      return MetaCaixa("", "");
     }
   }
 }

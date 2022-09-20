@@ -1,19 +1,40 @@
 import 'package:app_escola_bites/lista_page.dart';
 import 'package:app_escola_bites/lista_segunda_page.dart';
 import 'package:app_escola_bites/models/seu_saldo_models.dart';
+import 'package:app_escola_bites/services/querys/ws_get_meta_caixa.dart';
+import 'package:app_escola_bites/services/querys/ws_get_mov_banco.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:app_escola_bites/app_config.dart';
 
+import 'models/metacaixa.dart';
+import 'models/movimento_models.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  //homepage precisa receber o numero recebido na funcao de login na LoginPage
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+  @override
+  Future<void> initState() async {
+    //colocar todas as chamadas de ws
+    // e print dos valores recebidos
+    // verificar com o paulo se os dados nos prints sao os dados esperados
+    //MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa);
+    MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
+    print(metaCaixa);
+    List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
+    movimentosBanco.forEach((element) { print(element); });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
