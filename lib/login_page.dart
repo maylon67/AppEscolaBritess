@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (_) => HomePage(/*numeroDoCaixa*/)),
+                                        builder: (_) => HomePage(numeroDoCaixa)),
                                   );
                                 },
                                 child: Text(

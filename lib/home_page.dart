@@ -12,7 +12,7 @@ import 'models/metacaixa.dart';
 import 'models/movimento_models.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage(int numeroDoCaixa, {Key? key}) : super(key: key);
 
   //homepage precisa receber o numero recebido na funcao de login na LoginPage
 
