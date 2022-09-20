@@ -16,5 +16,4 @@ class Movimento{
     operacao = json['operacao'];
     vlrmovbco = json['vlrmovbco'];
     tipo = json['tipo'];
-  }
-}
+}}
