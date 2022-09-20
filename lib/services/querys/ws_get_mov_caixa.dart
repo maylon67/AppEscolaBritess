@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:app_escola_bites/models/movimento_caixa_models.dart';
+import 'package:app_escola_bites/models/movimento_caixa_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 
 import 'package:app_escola_bites/app_config.dart';
@@ -17,6 +18,7 @@ class WsMovCaixa {
       List<MovCaixa> movimentosCaixa = [];
       maps.forEach((element) {
         movimentosCaixa.add(MovCaixa.fromJson(element));
+        
       });
 
       return movimentosCaixa;
