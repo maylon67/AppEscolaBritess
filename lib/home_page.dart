@@ -21,9 +21,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           'Seja bem vindo, Usuario!',
-          style: GoogleFonts.oswald(fontSize: 25),
+          style: GoogleFonts.reemKufi(fontSize: 25),
         ),
-        backgroundColor: Color(0xFFF52314),
+        backgroundColor: corPadraoApp,
         centerTitle: true,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusDirectional.circular(25)),
@@ -322,7 +322,7 @@ class _HomePageState extends State<HomePage> {
                             Center(
                               child: Text(
                                 'Saldo Bancario',
-                                style: GoogleFonts.oswald(
+                                style: GoogleFonts.openSans(
                                     color: corPadraoApp,
                                     fontSize: 29,
                                     fontWeight: FontWeight.bold),

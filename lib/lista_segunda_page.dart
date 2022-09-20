@@ -18,7 +18,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
       appBar: AppBar(
         title: Text(
           'Extrato Bancario',
-          style: GoogleFonts.rubikMonoOne(fontSize: 21),
+          style: GoogleFonts.reemKufi(fontSize: 25),
         ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
         backgroundColor: corPadraoApp,
@@ -45,7 +45,7 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 14),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Text(
                         'Data',
                         style: GoogleFonts.antonio(

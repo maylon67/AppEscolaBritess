@@ -178,7 +178,7 @@ class _LoginPageState extends State<LoginPage> {
                               width: 13,
                             ),
                             Text(
-                              'Desenvolvido Por BISOFT',
+                              'DESENVOLVIDO POR BISOFT',
                               style: GoogleFonts.oswald(
                                 fontSize: 15,
                                 color: Color.fromARGB(255, 0, 0, 0),
