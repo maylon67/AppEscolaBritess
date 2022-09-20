@@ -139,13 +139,21 @@ class _LoginPageState extends State<LoginPage> {
                                   numeroDoCaixa = await WsLogin().getLogin(
                                       emailControle.text,
                                       textToMd5(senhaControle.text));
-                                      //testar se numero do caixa e diferente de 0
-
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (_) => HomePage(numeroDoCaixa)),
-                                  );
+                                  //testar se numero do caixa e diferente de 0
+                                  if (numeroDoCaixa == 0) {
+                                    Text(
+                                      'Login Invalido',
+                                      style: GoogleFonts.reemKufi(
+                                          color: Colors.red, fontSize: 13),
+                                    );
+                                  } else {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) =>
+                                              HomePage(numeroDoCaixa),),
+                                    );
+                                  }
                                 },
                                 child: Text(
                                   'Login',

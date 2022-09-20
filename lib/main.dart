@@ -9,7 +9,6 @@ void main() {
     home: LoginPage()
   ));
    var dataToHash = '123456';
-
   var bytesToHash = utf8.encode(dataToHash);
   var md5Digest = md5.convert(bytesToHash);
 
