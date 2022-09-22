@@ -14,10 +14,10 @@ class MovCaixa{
     this.tipo,
   );
   MovCaixa.fromJson(MapSD json){
-    data = json['data'];
-    operacao = json['operacao'];
-    mensalidade = json['mensalidade'];
-    valor = json['valor'];
-    tipo = json['tipo'];
+    data = json['DATA'];
+    operacao = json['OPERACAO'];
+    mensalidade = json['MENSALIDADE'];
+    valor = json['VALOR'];
+    tipo = json['TIPO'];
 }
 }
