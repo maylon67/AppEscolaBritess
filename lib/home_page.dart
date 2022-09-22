@@ -11,10 +11,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:app_escola_bites/app_config.dart';
-
 import 'models/metacaixa.dart';
 import 'models/movimento_models.dart';
 import 'models/saldo_banco_models.dart';
+
 
 class HomePage extends StatefulWidget {
   // HomePage(int numeroDoCaixa, {Key? key}) : super(key: key);
@@ -32,6 +32,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   bool isLoading = true;
+ late List<MovCaixa> movimentosCaixa ;
+ late List<Movimento> movimentosBanco ;
+ late SaldoCaixa saldoCaixa;
+ late SaldoBanco saldoBanco;
+ late MetaCaixa metaCaixa;
 
   teste() async {
     MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
@@ -52,19 +57,19 @@ class _HomePageState extends State<HomePage> {
     
   }
   _loadData() async{
-  MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
+   metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa);
   //todo//     chamada do metodo metaCaixa
-  List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
+   movimentosBanco = await WsMovimentoBanco().getMoviBanco();
   movimentosBanco.forEach((element) { print(element); });
   // chamada do metodo do getmovbanco
-  List<MovCaixa> movCaixa = await WsMovCaixa().getMovCaixa(16.toString());
-  movCaixa.forEach((element) {print(element);});
+   movimentosCaixa = await WsMovCaixa().getMovCaixa(numeroDoCaixa.toString());
+  movimentosCaixa.forEach((element) {print(element);});
   // chamada do metodo do getmovCaixa
-  SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
+   saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(numeroDoCaixa.toString());
   print(saldoCaixa);
   // chamada do metodo do getSaldoCaixa
-  SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
-  print(getSaldoBanco);
+   saldoBanco = await WsSaldoBanco().getSaldoBanco();
+  print(saldoBanco);
 
   setState(() {
     isLoading = false;
