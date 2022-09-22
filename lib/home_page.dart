@@ -52,6 +52,8 @@ class _HomePageState extends State<HomePage> {
     movCaixa.forEach((element) {print(element);});
     SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
     print(saldoCaixa);
+     SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
+  print(getSaldoBanco);
     // executar outras chamadas de ws
     // print das variaveis, caso apresente um erro tipo: 
     //       ===  ERROR  getMovBanco : type 'Null' is not a subtype of type 'String' ===
