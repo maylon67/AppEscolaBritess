@@ -31,15 +31,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  @override
-  void initState() {
-    //colocar todas as chamadas de ws
-    // e print dos valores recebidos
-    // verificar com o paulo se os dados nos prints sao os dados esperados
-    //MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa);
-    teste();
-    super.initState();
-  }
   bool isLoading = true;
 
   teste() async {
@@ -78,7 +69,17 @@ class _HomePageState extends State<HomePage> {
   setState(() {
     isLoading = false;
   });
+  }
 
+  @override
+  void initState() {
+    //colocar todas as chamadas de ws
+    // e print dos valores recebidos
+    // verificar com o paulo se os dados nos prints sao os dados esperados
+    //MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa);
+    teste();
+    super.initState();
+    _loadData();
   }
 
   @override
