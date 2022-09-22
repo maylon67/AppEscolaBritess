@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
     teste();
     super.initState();
   }
+  bool isLoading = true;
 
   teste() async {
     MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
@@ -58,7 +59,20 @@ class _HomePageState extends State<HomePage> {
     
   }
   _loadData() async{
-    
+  MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
+  //chamada do metodo metaCaixa
+  List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
+  movimentosBanco.forEach((element) { print(element); });
+  // chamada do metodo do getmovbanco
+  List<MovCaixa> movCaixa = await WsMovCaixa().getMovCaixa(16.toString());
+  movCaixa.forEach((element) {print(element);});
+  // chamada do metodo do getmovCaixa
+  SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
+  print(saldoCaixa);
+  // chamada do metodo do getSaldoCaixa
+  SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
+  print(getSaldoBanco);
+
   }
 
   @override
