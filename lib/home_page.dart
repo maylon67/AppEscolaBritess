@@ -57,6 +57,9 @@ class _HomePageState extends State<HomePage> {
     // houve erro ao processar o json no ws ou no fromJson()
     
   }
+  _loadData() async{
+    
+  }
 
   @override
   Widget build(BuildContext context) {
