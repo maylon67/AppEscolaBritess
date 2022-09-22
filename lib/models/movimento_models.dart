@@ -12,8 +12,8 @@ class Movimento{
     this.tipo,
   );
   Movimento.fromJson(MapSD json){
-    data = json['data'];
-    operacao = json['operacao'];
-    vlrmovbco = json['vlrmovbco'];
-    tipo = json['tipo'];
+    data = json['DATA'];
+    operacao = json['OPERACAO'];
+    vlrmovbco = json['VLRMOVBCO'];
+    tipo = json['TIPO'];
 }}

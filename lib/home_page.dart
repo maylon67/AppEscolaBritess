@@ -1,8 +1,10 @@
 import 'package:app_escola_bites/lista_page.dart';
 import 'package:app_escola_bites/lista_segunda_page.dart';
+import 'package:app_escola_bites/models/saldo_caixa_models.dart';
 import 'package:app_escola_bites/models/seu_saldo_models.dart';
 import 'package:app_escola_bites/services/querys/ws_get_meta_caixa.dart';
 import 'package:app_escola_bites/services/querys/ws_get_mov_banco.dart';
+import 'package:app_escola_bites/services/querys/ws_get_saldo_banco.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
@@ -13,8 +15,12 @@ import 'models/movimento_models.dart';
 
 class HomePage extends StatefulWidget {
   // HomePage(int numeroDoCaixa, {Key? key}) : super(key: key);
-HomePage(numeroDoCaixa);
+ HomePage(numeroDoCaixa);
   //homepage precisa receber o numero recebido na funcao de login na LoginPage
+
+  SaldoCaixa? saldoCaixa;
+
+  WsSaldoBanco? saldoBanco;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -23,16 +29,26 @@ HomePage(numeroDoCaixa);
 class _HomePageState extends State<HomePage> {
 
   @override
-  Future<void> initState() async {
+  void initState() {
     //colocar todas as chamadas de ws
     // e print dos valores recebidos
     // verificar com o paulo se os dados nos prints sao os dados esperados
     //MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa);
+    teste();
+    super.initState();
+  }
+
+  teste() async {
     MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
     print(metaCaixa);
+    // Instance of 'MetaCaixa'
     List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
     movimentosBanco.forEach((element) { print(element); });
-    super.initState();
+    // executar outras chamadas de ws
+    // print das variaveis, caso apresente um erro tipo: 
+    //       ===  ERROR  getMovBanco : type 'Null' is not a subtype of type 'String' ===
+    // houve erro ao processar o json no ws ou no fromJson()
+    
   }
 
   @override
@@ -86,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                               child: Padding(
                                 padding: EdgeInsets.symmetric(vertical: 0),
                                 child: Text(
-                                  'R\$ 498.986,98',
+                                  widget.saldoCaixa!.valorSaldoFim,
                                   style: GoogleFonts.oswald(
                                       fontSize: 42,
                                       fontWeight: FontWeight.bold,
@@ -354,7 +370,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.symmetric(vertical: 25)),
                             Center(
                                 child: Text(
-                              'R\$ 99.999,99',
+                              widget.saldoBanco.toString(),
                               style: GoogleFonts.oswald(
                                   fontSize: 42,
                                   fontWeight: FontWeight.bold,
