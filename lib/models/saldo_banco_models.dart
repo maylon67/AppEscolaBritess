@@ -1,14 +1,14 @@
 import 'package:app_escola_bites/app_config.dart';
 
-class MovimentoSaldoBanco {
+class SaldoBanco {
   String dataBanco = '';
   String valoresDeFim = '';
   
-  MovimentoSaldoBanco(
+    SaldoBanco(
     this.dataBanco, 
     this.valoresDeFim,
     );
-    MovimentoSaldoBanco.fromJson(MapSD json){
+    SaldoBanco.fromJson(MapSD json){
       dataBanco = json['DTBCO'];
       valoresDeFim = json['VLRSLDFIM'];
     }

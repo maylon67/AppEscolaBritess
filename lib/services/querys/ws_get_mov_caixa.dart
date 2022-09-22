@@ -5,7 +5,7 @@ import 'package:app_escola_bites/services/ws_config.dart';
 import 'package:app_escola_bites/app_config.dart';
 
 class WsMovCaixa {
-  Future<List<MovCaixa>> getMovCaixa(codigoCaixa, valorRifa) async {
+  Future<List<MovCaixa>> getMovCaixa(String codigoCaixa) async {
     try {
       MapSD response = await WsController.executeWsPost(
           query: '/controller/getMovCaixa?cdcaixa=' + codigoCaixa,
@@ -15,7 +15,7 @@ class WsMovCaixa {
           response.containsKey('connection') ||
           response.isEmpty) return [];
 
-      String movimentoCaixa = '';
+      print(response);
       List maps = response['movimentos'];
       List<MovCaixa> movimentosCaixa = [];
       maps.forEach((element) {

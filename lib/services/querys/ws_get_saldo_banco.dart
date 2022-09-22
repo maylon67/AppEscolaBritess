@@ -3,22 +3,21 @@ import 'package:app_escola_bites/models/saldo_banco_models.dart';
 import 'package:app_escola_bites/services/ws_config.dart';
 import 'package:flutter/material.dart';
 class WsSaldoBanco{
-  WsSaldoBanco(String dataBanco,String valoresDeFim);
-Future<List<MovimentoSaldoBanco>> getSaldoBanco() async{
+Future<SaldoBanco> getSaldoBanco() async{
     try{
       MapSD response = await WsController.executeWsPost(query: '/controller/getSaldoBanco', duration: Duration(seconds: 35));
       
-      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return [];
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) SaldoBanco("", "");
       
       String dataBanco = response['DTBCO'];
       String valoresDeFim = response['VLRSDFIM'];
-      List <MovimentoSaldoBanco> buscaSaldoBanco = [];
-      WsSaldoBanco movimentosSaldoBanco = WsSaldoBanco(dataBanco, valoresDeFim);
+      //TODO criar model de saldo banco
+      SaldoBanco saldoBanco = SaldoBanco(dataBanco, valoresDeFim);
       
-      return buscaSaldoBanco; 
+      return saldoBanco; 
     } catch(e) {
      print('===  ERROR  getSaldoBanco : ${e.toString()} ===');
-      return [];
+      return SaldoBanco("", "");
     }
   }
 }

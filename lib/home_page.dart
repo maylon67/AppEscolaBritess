@@ -1,10 +1,12 @@
 import 'package:app_escola_bites/lista_page.dart';
 import 'package:app_escola_bites/lista_segunda_page.dart';
+import 'package:app_escola_bites/models/movimento_caixa_models.dart';
 import 'package:app_escola_bites/models/saldo_caixa_models.dart';
-import 'package:app_escola_bites/models/seu_saldo_models.dart';
 import 'package:app_escola_bites/services/querys/ws_get_meta_caixa.dart';
 import 'package:app_escola_bites/services/querys/ws_get_mov_banco.dart';
+import 'package:app_escola_bites/services/querys/ws_get_mov_caixa.dart';
 import 'package:app_escola_bites/services/querys/ws_get_saldo_banco.dart';
+import 'package:app_escola_bites/services/querys/ws_saldo_caixa.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
@@ -12,15 +14,16 @@ import 'package:app_escola_bites/app_config.dart';
 
 import 'models/metacaixa.dart';
 import 'models/movimento_models.dart';
+import 'models/saldo_banco_models.dart';
 
 class HomePage extends StatefulWidget {
   // HomePage(int numeroDoCaixa, {Key? key}) : super(key: key);
  HomePage(numeroDoCaixa);
   //homepage precisa receber o numero recebido na funcao de login na LoginPage
 
-  SaldoCaixa? saldoCaixa;
+  SaldoCaixa? saldoCaixa = SaldoCaixa('123', '123');
 
-  WsSaldoBanco? saldoBanco;
+  SaldoBanco? saldoBanco = SaldoBanco('123', '123');
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -44,6 +47,10 @@ class _HomePageState extends State<HomePage> {
     // Instance of 'MetaCaixa'
     List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
     movimentosBanco.forEach((element) { print(element); });
+    List<MovCaixa> movCaixa = await WsMovCaixa().getMovCaixa(16.toString());
+    movCaixa.forEach((element) {print(element);});
+    SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
+    print(saldoCaixa);
     // executar outras chamadas de ws
     // print das variaveis, caso apresente um erro tipo: 
     //       ===  ERROR  getMovBanco : type 'Null' is not a subtype of type 'String' ===
@@ -370,7 +377,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.symmetric(vertical: 25)),
                             Center(
                                 child: Text(
-                              widget.saldoBanco.toString(),
+                              widget.saldoBanco!.valoresDeFim,
                               style: GoogleFonts.oswald(
                                   fontSize: 42,
                                   fontWeight: FontWeight.bold,
