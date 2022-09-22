@@ -75,6 +75,10 @@ class _HomePageState extends State<HomePage> {
   SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
   print(getSaldoBanco);
 
+  setState(() {
+    isLoading = false;
+  });
+
   }
 
   @override
@@ -91,7 +95,12 @@ class _HomePageState extends State<HomePage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusDirectional.circular(25)),
       ),
-      body: SafeArea(
+      body: isLoading
+      ? Center(
+        child: CircularProgressIndicator(
+          color: corPadraoApp,
+        ),
+      ) : SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 1),
