@@ -21,9 +21,9 @@ class HomePage extends StatefulWidget {
  HomePage(numeroDoCaixa);
   //homepage precisa receber o numero recebido na funcao de login na LoginPage
 
-  SaldoCaixa? saldoCaixa = SaldoCaixa('123', '123');
+  //SaldoCaixa? saldoCaixa = SaldoCaixa('123', '123');
 
-  SaldoBanco? saldoBanco = SaldoBanco('123', '123');
+  //SaldoBanco? saldoBanco = SaldoBanco('123', '123');
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                               child: Padding(
                                 padding: EdgeInsets.symmetric(vertical: 0),
                                 child: Text(
-                                  widget.saldoCaixa!.valorSaldoFim,
+                                  saldoCaixa.valorSaldoFim,
                                   style: GoogleFonts.oswald(
                                       fontSize: 42,
                                       fontWeight: FontWeight.bold,
@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      '2.260,00',
+                                      metaCaixa.mensalidade,
                                       style: GoogleFonts.oswald(
                                           color: Colors.black,
                                           fontSize: 16,
@@ -251,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      '1.400,00',
+                                      metaCaixa.rifa,
                                       style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -411,7 +411,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.symmetric(vertical: 25)),
                             Center(
                                 child: Text(
-                              widget.saldoBanco!.valoresDeFim,
+                              saldoBanco.valoresDeFim,
                               style: GoogleFonts.oswald(
                                   fontSize: 42,
                                   fontWeight: FontWeight.bold,
