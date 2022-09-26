@@ -5,7 +5,7 @@ class SaldoBanco {
 
   static var f = NumberFormat('##,##,##0', 'pt-br');
   
-  String dataBanco = '';
+  String dataBanco = ''; 
   String valoresDeFim = '';
   
     SaldoBanco(
