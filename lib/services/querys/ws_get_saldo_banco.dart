@@ -7,10 +7,10 @@ Future<SaldoBanco> getSaldoBanco() async{
     try{
       MapSD response = await WsController.executeWsPost(query: '/controller/getSaldoBanco', duration: Duration(seconds: 35));
       
-      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) SaldoBanco("", "");
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) SaldoBanco("", 0);
     
       String dataBanco = response['DTBCO'];
-      String valoresDeFim = response['VLRSLDFIM'];
+      double valoresDeFim = double.parse(response['VLRSLDFIM']);
       //String valoresDeFim = response['VLRSDFIM'];
       //TODO criar model de saldo banco
       SaldoBanco saldoBanco = SaldoBanco.fromJson(response);
@@ -18,7 +18,7 @@ Future<SaldoBanco> getSaldoBanco() async{
       return saldoBanco; 
     } catch(e) {
       print('===  ERROR  getSaldoBanco : ${e.toString()} ===');
-      return SaldoBanco("", "");
+      return SaldoBanco("", 0);
     }
   }
 }

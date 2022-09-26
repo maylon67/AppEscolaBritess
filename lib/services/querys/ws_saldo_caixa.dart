@@ -9,16 +9,16 @@ class WsSaldoCaixa{
     try{
       MapSD response = await WsController.executeWsPost(query: '/controller/getSaldoCaixa?cdcaixa=' + codigoCaixa, duration: Duration(seconds: 35));
       
-      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return SaldoCaixa('','');
+      if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return SaldoCaixa('',0);
       
       String data = response["DTCAIXA"];
-      String valorSaldoFim = response["VLRSLDFIM"];
+      double valorSaldoFim = double.parse(response["VLRSLDFIM"]);
       //criar saldo caixa model
       SaldoCaixa saldoCaixa = SaldoCaixa(data, valorSaldoFim);
       return saldoCaixa;
     } catch(e) {
       print('===  ERROR  getSaldoCaixa : ${e.toString()} ===');
-      return SaldoCaixa('', '');
+      return SaldoCaixa('', 0);
     }
   }
 }

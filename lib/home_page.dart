@@ -9,6 +9,7 @@ import 'package:app_escola_bites/services/querys/ws_get_saldo_banco.dart';
 import 'package:app_escola_bites/services/querys/ws_saldo_caixa.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:app_escola_bites/app_config.dart';
 import 'models/metacaixa.dart';
@@ -37,6 +38,8 @@ class _HomePageState extends State<HomePage> {
  late SaldoCaixa saldoCaixa;
  late SaldoBanco saldoBanco;
  late MetaCaixa metaCaixa;
+
+ static var f = NumberFormat("##,##,##0", "pt-br");
 
   teste() async {
     MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
@@ -143,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                               child: Padding(
                                 padding: EdgeInsets.symmetric(vertical: 0),
                                 child: Text(
-                                  saldoCaixa.valorSaldoFim,
+                                  f.format(saldoCaixa.valorSaldoFim),
                                   style: GoogleFonts.oswald(
                                       fontSize: 42,
                                       fontWeight: FontWeight.bold,
@@ -235,7 +238,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      metaCaixa.mensalidade,
+                                      f.format(metaCaixa.mensalidade),
                                       style: GoogleFonts.oswald(
                                           color: Colors.black,
                                           fontSize: 16,
@@ -251,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      metaCaixa.rifa,
+                                      f.format(metaCaixa.rifa),
                                       style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -411,7 +414,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.symmetric(vertical: 25)),
                             Center(
                                 child: Text(
-                              saldoBanco.valoresDeFim,
+                              f.format(saldoBanco.valoresDeFim),
                               style: GoogleFonts.oswald(
                                   fontSize: 42,
                                   fontWeight: FontWeight.bold,

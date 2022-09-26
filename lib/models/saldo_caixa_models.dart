@@ -6,13 +6,13 @@ class SaldoCaixa{
   static var f = NumberFormat('##,##,##0', 'pt-br');
 
   String dataCaixa = '';
-  String valorSaldoFim = '';
+  double valorSaldoFim = 0.0;
   SaldoCaixa(
     this.dataCaixa,
     this.valorSaldoFim,
   );
   SaldoCaixa.fromJson(MapSD json){
-    dataCaixa = f.format(json['DTCAIXA']);
-    valorSaldoFim = f.format(json['VLRSLDFIM']);
+    dataCaixa = json['DTCAIXA'];
+    valorSaldoFim = double.parse(json['VLRSLDFIM']);
   }
 }

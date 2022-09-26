@@ -5,14 +5,14 @@ class MetaCaixa{
   
   static var f = NumberFormat('##,##,##0', 'pt-br');
   
-  String mensalidade = '';
-  String rifa = '';
+  double mensalidade = 0.0;
+  double rifa = 0.0;
   MetaCaixa(
     this.mensalidade,
     this.rifa,
     );
     MetaCaixa.fromJson(MapSD json){
-      mensalidade = f.format(json['VLRMENSALIDADE']);
-      rifa = f.format(['VLRRIFA']);
+      mensalidade = double.parse(json['VLRMENSALIDADE']);
+      rifa = double.parse(json['VLRRIFA']);
     }
 }

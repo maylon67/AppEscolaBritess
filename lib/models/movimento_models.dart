@@ -1,9 +1,13 @@
 import 'package:app_escola_bites/app_config.dart';
+import 'package:intl/intl.dart';
 
 class Movimento{
+
+  static var f = NumberFormat("##,##,##0", "pt-br");
+  
   String data = '';
   String operacao = '';
-  String vlrmovbco = '';
+  double vlrmovbco = 0.0;
   String tipo = '';
   Movimento(
     this.data,
@@ -14,6 +18,6 @@ class Movimento{
   Movimento.fromJson(MapSD json){
     data = json['DATA'];
     operacao = json['OPERACAO'];
-    vlrmovbco = json['VLRMOVBCO'];
+    vlrmovbco = double.parse(json['VLRMOVBCO']);
     tipo = json['TIPO'];
 }}

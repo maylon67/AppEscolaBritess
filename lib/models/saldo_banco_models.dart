@@ -5,15 +5,15 @@ class SaldoBanco {
 
   static var f = NumberFormat('##,##,##0', 'pt-br');
   
-  String dataBanco = ''; 
-  String valoresDeFim = '';
+  String dataBanco = '';
+  double valoresDeFim = 0.0;
   
     SaldoBanco(
     this.dataBanco, 
     this.valoresDeFim,
     );
     SaldoBanco.fromJson(MapSD json){
-      dataBanco = f.format(json['DTBCO']);
-      valoresDeFim = f.format(json['VLRSLDFIM']);
+      dataBanco = json['DTBCO'];
+      valoresDeFim = double.parse(json['VLRSLDFIM']);
     }
 }
