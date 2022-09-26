@@ -377,7 +377,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
+                             MaterialPageRoute(
                                 builder: (context) => listaPage()));
                       }),
                 ),
