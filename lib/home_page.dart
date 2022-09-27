@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
  late SaldoBanco saldoBanco;
  late MetaCaixa metaCaixa;
 
- static var f = NumberFormat("##,##,##0", "pt-br");
+ static var f = NumberFormat("##,###,##0.00", "pt-br");
 
   teste() async {
     MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
@@ -238,7 +238,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      f.format(metaCaixa.mensalidade),
+                                     f.format(metaCaixa.mensalidade),
                                       style: GoogleFonts.oswald(
                                           color: Colors.black,
                                           fontSize: 16,
@@ -254,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      f.format(metaCaixa.rifa),
+                                     f.format(metaCaixa.rifa),
                                       style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,

@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 class SaldoCaixa{
 
-  static var f = NumberFormat('##,##,##0', 'pt-br');
+  static var f = NumberFormat('##,###,##0', 'pt-br');
 
   String dataCaixa = '';
   double valorSaldoFim = 0.0;

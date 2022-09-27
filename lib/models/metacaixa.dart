@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 class MetaCaixa{
   
-  static var f = NumberFormat('##,##,##0', 'pt-br');
+  static var f = NumberFormat('##,###,##0', 'pt-br');
   
   double mensalidade = 0.0;
   double rifa = 0.0;

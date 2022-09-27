@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 class MovCaixa{
 
-  static var f = NumberFormat("##,##,##0", "pt-br");
+  static var f = NumberFormat('##,###,##0', 'pt-br');
   
   String data = '';
   String operacao = '';

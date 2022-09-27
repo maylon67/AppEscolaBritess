@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 class SaldoBanco {
 
-  static var f = NumberFormat('##,##,##0', 'pt-br');
+  static var f = NumberFormat('##,###,##0', 'pt-br');
   
   String dataBanco = '';
   double valoresDeFim = 0.0;
@@ -14,6 +14,6 @@ class SaldoBanco {
     );
     SaldoBanco.fromJson(MapSD json){
       dataBanco = json['DTBCO'];
-      valoresDeFim = double.parse(json['VLRSLDFIM']);
+      valoresDeFim = double.parse(json['VLRSLDFIM'].toString());
     }
 }
