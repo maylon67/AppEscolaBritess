@@ -238,7 +238,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                     f.format(metaCaixa.mensalidade),
+                                     '2.260,00',
                                       style: GoogleFonts.oswald(
                                           color: Colors.black,
                                           fontSize: 16,
@@ -254,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                     child: Text(
-                                     f.format(metaCaixa.rifa),
+                                     '1.400,00',
                                       style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -295,7 +295,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                       child: Text(
-                                    '99,999,99',
+                                    f.format(metaCaixa.mensalidade),
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -310,7 +310,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                       child: Text(
-                                    '99.999,99',
+                                    f.format(metaCaixa.rifa),
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
