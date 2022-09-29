@@ -1,11 +1,13 @@
 import 'package:app_escola_bites/lista_page.dart';
 import 'package:app_escola_bites/lista_segunda_page.dart';
+import 'package:app_escola_bites/models/login_models.dart';
 import 'package:app_escola_bites/models/movimento_caixa_models.dart';
 import 'package:app_escola_bites/models/saldo_caixa_models.dart';
 import 'package:app_escola_bites/services/querys/ws_get_meta_caixa.dart';
 import 'package:app_escola_bites/services/querys/ws_get_mov_banco.dart';
 import 'package:app_escola_bites/services/querys/ws_get_mov_caixa.dart';
 import 'package:app_escola_bites/services/querys/ws_get_saldo_banco.dart';
+import 'package:app_escola_bites/services/querys/ws_login.dart';
 import 'package:app_escola_bites/services/querys/ws_saldo_caixa.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
  late SaldoCaixa saldoCaixa;
  late SaldoBanco saldoBanco;
  late MetaCaixa metaCaixa;
+ late Login login;
 
  static var f = NumberFormat("##,###,##0.00", "pt-br");
 
@@ -53,6 +56,8 @@ class _HomePageState extends State<HomePage> {
     print(saldoCaixa);
      SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
   print(getSaldoBanco);
+    Login getLogin = await WsLogin().getLogin(email, senha);
+    print(getLogin);
     // executar outras chamadas de ws
     // print das variaveis, caso apresente um erro tipo: 
     //       ===  ERROR  getMovBanco : type 'Null' is not a subtype of type 'String' ===
@@ -96,7 +101,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color.fromARGB(255, 255, 247, 247),
       appBar: AppBar(
         title: Text(
-          'Seja bem vindo, Usuario!',
+          'Seja bem vindo(a),'+ f.format(login.noCaixa),
           style: GoogleFonts.reemKufi(fontSize: 25),
         ),
         backgroundColor: corPadraoApp,
@@ -243,6 +248,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Colors.black,
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.end,
                                     ),
                                   ),
                                   Container(
@@ -345,7 +351,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                       child: Text(
-                                    '999,99',
+                                    f.format(metaCaixa.percMensalidade),
                                     style: GoogleFonts.oswald(
                                         color: Color.fromARGB(255, 16, 16, 16),
                                         fontSize: 16,
@@ -360,7 +366,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Expanded(
                                       child: Text(
-                                    '999,99',
+                                    f.format(metaCaixa.percRifa),
                                     style: GoogleFonts.oswald(
                                         color: Colors.black,
                                         fontSize: 16,
