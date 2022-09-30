@@ -8,7 +8,7 @@ class Login{
     this.noCaixa,
   );
   Login.fromJson(MapSD json){
-    codigoCaixa = int.parse(json['CDCAIXA']);
+    codigoCaixa = int.parse(json['CDCAIXA'].toString());
     noCaixa = json['NOCAIXA'];
   }
 }

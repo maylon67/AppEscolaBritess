@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     print(saldoCaixa);
      SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
   print(getSaldoBanco);
-   // Login getLogin = await WsLogin().getLogin(email, senha);
+   // Login getLogin = await WsLogin().getLogin();
    // print(getLogin);
     // executar outras chamadas de ws
     // print das variaveis, caso apresente um erro tipo: 
@@ -78,6 +78,8 @@ class _HomePageState extends State<HomePage> {
   // chamada do metodo do getSaldoCaixa
    saldoBanco = await WsSaldoBanco().getSaldoBanco();
   print(saldoBanco);
+  // login = await WsLogin().getLogin();
+  // print(login);
 
   setState(() {
     isLoading = false;
