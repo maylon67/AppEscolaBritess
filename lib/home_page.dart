@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
     
   }
   _loadData() async{
-   metaCaixa = await WsMetaCaixa().getMetaCaixa(0);
+   metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa.codigoCaixa);
   //todo//     chamada do metodo metaCaixa
    movimentosBanco = await WsMovimentoBanco().getMoviBanco();
   movimentosBanco.forEach((element) { print(element); });
@@ -192,6 +192,7 @@ class _HomePageState extends State<HomePage> {
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.center,
                                   )),
                                   Container(
                                     height: 30,
@@ -208,8 +209,12 @@ class _HomePageState extends State<HomePage> {
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
+                                  SizedBox(
+                                    width: 10,
+                                  )
                                 ],
                               ),
                             ),
@@ -264,8 +269,12 @@ class _HomePageState extends State<HomePage> {
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                       ),
+                                      textAlign: TextAlign.end,
                                     ),
                                   ),
+                                  SizedBox(
+                                    width: 10,
+                                  )
                                 ],
                               ),
                             ),
@@ -304,6 +313,7 @@ class _HomePageState extends State<HomePage> {
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.end,
                                   )),
                                   Container(
                                     height: 30,
@@ -319,7 +329,11 @@ class _HomePageState extends State<HomePage> {
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.end,
                                   )),
+                                  SizedBox(
+                                    width: 10,
+                                  )
                                 ],
                               ),
                             ),
@@ -354,6 +368,7 @@ class _HomePageState extends State<HomePage> {
                                         color: Color.fromARGB(255, 16, 16, 16),
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.end,
                                   )),
                                   Container(
                                     height: 30,
@@ -369,7 +384,11 @@ class _HomePageState extends State<HomePage> {
                                         color: Colors.black,
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.end,
                                   )),
+                                  SizedBox(
+                                    width: 10,
+                                  )
                                 ],
                               ),
                             ),
