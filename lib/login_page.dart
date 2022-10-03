@@ -135,10 +135,10 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Expanded(
                               child: RaisedButton(
-                                onPressed: () async {
-                                  numeroDoCaixa = await WsLogin().getLogin(
+                               onPressed: () async {
+                                  numeroDoCaixa = (await WsLogin().getLogin(
                                       emailControle.text,
-                                      textToMd5(senhaControle.text));
+                                      textToMd5(senhaControle.text))) as int;
                                   //testar se numero do caixa e diferente de 0
                                   if (numeroDoCaixa == 0) {
                                     Text(
