@@ -136,11 +136,11 @@ class _LoginPageState extends State<LoginPage> {
                             Expanded(
                               child: RaisedButton(
                                onPressed: () async {
-                                  numeroDoCaixa = (await WsLogin().getLogin(
+                                  numeroDoCaixa = await WsLogin().getLogin(
                                       emailControle.text,
-                                      textToMd5(senhaControle.text))) as int;
+                                      textToMd5(senhaControle.text));
                                   //testar se numero do caixa e diferente de 0
-                                  if (numeroDoCaixa == 0) {
+                                  if (numeroDoCaixa.codigoCaixa == 0) {
                                     Text(
                                       'Login Invalido',
                                       style: GoogleFonts.reemKufi(

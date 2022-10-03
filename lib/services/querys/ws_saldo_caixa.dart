@@ -12,7 +12,7 @@ class WsSaldoCaixa{
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) return SaldoCaixa('',0);
       
       String data = response["DTCAIXA"];
-      double valorSaldoFim = double.parse(response["VLRSLDFIM"]);
+      double valorSaldoFim = (response["VLRSLDFIM"]);
       //criar saldo caixa model
       SaldoCaixa saldoCaixa = SaldoCaixa(data, valorSaldoFim);
       return saldoCaixa;

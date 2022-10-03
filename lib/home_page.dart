@@ -21,9 +21,10 @@ import 'models/saldo_banco_models.dart';
 
 class HomePage extends StatefulWidget {
   // HomePage(int numeroDoCaixa, {Key? key}) : super(key: key);
- HomePage(numeroDoCaixa);
+ HomePage(this.login);
   //homepage precisa receber o numero recebido na funcao de login na LoginPage
 
+  Login login;
   //SaldoCaixa? saldoCaixa = SaldoCaixa('123', '123');
 
   //SaldoBanco? saldoBanco = SaldoBanco('123', '123');
@@ -40,24 +41,21 @@ class _HomePageState extends State<HomePage> {
  late SaldoCaixa saldoCaixa;
  late SaldoBanco saldoBanco;
  late MetaCaixa metaCaixa;
- late Login login;
-
  static var f = NumberFormat("##,###,##0.00", "pt-br");
 
   teste() async {
-    MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
-    print(metaCaixa);
-    // Instance of 'MetaCaixa'
-    List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
-    movimentosBanco.forEach((element) { print(element); });
-    List<MovCaixa> movCaixa = await WsMovCaixa().getMovCaixa(16.toString());
-    movCaixa.forEach((element) {print(element);});
-    SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
-    print(saldoCaixa);
-     SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
-  print(getSaldoBanco);
-   // Login getLogin = await WsLogin().getLogin();
-   // print(getLogin);
+  //   MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
+  //   print(metaCaixa);
+  //   // Instance of 'MetaCaixa'
+  //   List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
+  //   movimentosBanco.forEach((element) { print(element); });
+  //   List<MovCaixa> movCaixa = await WsMovCaixa().getMovCaixa(16.toString());
+  //   movCaixa.forEach((element) {print(element);});
+  //   SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
+  //   print(saldoCaixa);
+  //    SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
+  // print(getSaldoBanco);
+    
     // executar outras chamadas de ws
     // print das variaveis, caso apresente um erro tipo: 
     //       ===  ERROR  getMovBanco : type 'Null' is not a subtype of type 'String' ===
@@ -65,22 +63,20 @@ class _HomePageState extends State<HomePage> {
     
   }
   _loadData() async{
-   metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa);
+   metaCaixa = await WsMetaCaixa().getMetaCaixa(0);
   //todo//     chamada do metodo metaCaixa
    movimentosBanco = await WsMovimentoBanco().getMoviBanco();
   movimentosBanco.forEach((element) { print(element); });
   // chamada do metodo do getmovbanco
-   movimentosCaixa = await WsMovCaixa().getMovCaixa(numeroDoCaixa.toString());
+   movimentosCaixa = await WsMovCaixa().getMovCaixa(numeroDoCaixa.codigoCaixa.toString());
   movimentosCaixa.forEach((element) {print(element);});
   // chamada do metodo do getmovCaixa
-   saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(numeroDoCaixa.toString());
+   saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(numeroDoCaixa.codigoCaixa.toString());
   print(saldoCaixa);
   // chamada do metodo do getSaldoCaixa
    saldoBanco = await WsSaldoBanco().getSaldoBanco();
   print(saldoBanco);
-  // login = await WsLogin().getLogin();
-  // print(login);
-
+   
   setState(() {
     isLoading = false;
   });
@@ -103,7 +99,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color.fromARGB(255, 255, 247, 247),
       appBar: AppBar(
         title: Text(
-          'Seja bem vindo(a),'+ f.format(login.noCaixa),
+          'Seja bem vindo(a),'+ numeroDoCaixa.noCaixa,
           style: GoogleFonts.reemKufi(fontSize: 25),
         ),
         backgroundColor: corPadraoApp,

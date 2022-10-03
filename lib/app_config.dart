@@ -1,6 +1,7 @@
+import 'package:app_escola_bites/models/login_models.dart';
 import 'package:flutter/material.dart';
 
-int numeroDoCaixa = 0;
+late Login numeroDoCaixa;
 typedef MapSD = Map<String, dynamic>;
 
 double altura(BuildContext context) => MediaQuery.of(context).size.height;
