@@ -10,11 +10,10 @@ Future<SaldoBanco> getSaldoBanco() async{
       if (response.containsKey('error') || response.containsKey('connection') || response.isEmpty) SaldoBanco("", 0);
     
       String dataBanco = response['DTBCO'];
-      double valoresDeFim = (response['VLRSLDFIM']);
+      double valoresDeFim = response['VLRSLDFIM'];
       //String valoresDeFim = response['VLRSDFIM'];
       //TODO criar model de saldo banco
       SaldoBanco saldoBanco = SaldoBanco.fromJson(response);
-      
       return saldoBanco; 
     } catch(e) {
       print('===  ERROR  getSaldoBanco : ${e.toString()} ===');
