@@ -36,8 +36,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   bool isLoading = true;
- late List<MovCaixa> movimentosCaixa ;
- late List<Movimento> movimentosBanco ;
+ late List<MovCaixa> movimentosCaixa;
+ late List<Movimento> movimentosBanco;
  late SaldoCaixa saldoCaixa;
  late SaldoBanco saldoBanco;
  late MetaCaixa metaCaixa;
