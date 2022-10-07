@@ -30,10 +30,11 @@ class _listaPageState extends State<listaPage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
-      body: ListView.separated(itemBuilder: (context, indice){
-return TileMovimentosCaixa(listMovCaixa[indice]);
+      body: ListView.separated(
+        shrinkWrap: true,
+        itemBuilder: (context, indice){
+      return TileMovimentosCaixa(listMovCaixa[indice]);
       },
-      shrinkWrap: true,
       separatorBuilder: (_, __) => Divider(
         color: corPadrao2,
         height: 30,
