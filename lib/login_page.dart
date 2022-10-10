@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                                 color: Color(0xff083d99), width: 2.5),
                           ),
                           child: TextFormField(
-                            controller: emailControle,
+                            controller: emailControle,      
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.symmetric(vertical: 5),
                               border: InputBorder.none,
