@@ -404,7 +404,10 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                              MaterialPageRoute(
-                                builder: (context) => listaPage()));
+                               //ENVIAR O LIST<MOVCAIXA> QUE FOI BUSCADO NO WS AQUI
+                               // EXEMPLO:
+                               // builder: (context) => ListaPage(movimentosCaixa)));
+                                builder: (context) => ListaPage()));
                       }),
                 ),
                 Padding(

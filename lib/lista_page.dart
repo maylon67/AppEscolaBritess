@@ -7,14 +7,18 @@ import 'package:app_escola_bites/home_page.dart';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
-class listaPage extends StatefulWidget {
-  const listaPage({Key? key}) : super(key: key);
+class ListaPage extends StatefulWidget {
+  const ListaPage({Key? key}) : super(key: key);
+
+  //PRECISA RECEBER UM LIST<MOVCAIXA> AQUI
+  //EXEMPLO
+  // LOGIN_PAGE -> HOME_PAGE
 
   @override
-  State<listaPage> createState() => _listaPageState();
+  State<ListaPage> createState() => _ListaPageState();
 }
 
-class _listaPageState extends State<listaPage> {
+class _ListaPageState extends State<ListaPage> {
   ScrollController listaControle = ScrollController();
    List<MovCaixa> listMovCaixa = [];
   String generateMd5(String input) {
@@ -33,6 +37,7 @@ class _listaPageState extends State<listaPage> {
       body: ListView.separated(
         shrinkWrap: true,
         itemBuilder: (context, indice){
+          //USAR O LIST<MOVCAIXA> RECEBIDO POR PARAMETRO
       return TileMovimentosCaixa(listMovCaixa[indice]);
       },
       separatorBuilder: (_, __) => Divider(
