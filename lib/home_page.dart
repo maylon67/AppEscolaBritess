@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusDirectional.circular(25)),
+            borderRadius: BorderRadiusDirectional.circular(25)),     
       ),
       body: isLoading
       ? Center(

@@ -10,7 +10,7 @@ class SaldoBanco {
   
     SaldoBanco(
     this.dataBanco, 
-    this.valoresDeFim,
+    this.valoresDeFim, 
     );
     SaldoBanco.fromJson(MapSD json){
       dataBanco = json['DTBCO'];
