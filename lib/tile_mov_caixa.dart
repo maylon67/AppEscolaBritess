@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 
 class TileMovimentosCaixa extends StatefulWidget {
  // const TileMovCaixa({ Key? key }) : super(key: key);
-
-  late MovCaixa movCaixa;
-TileMovimentosCaixa(MovCaixa this.movCaixa);
+   MovCaixa movCaixa;
+   TileMovimentosCaixa(MovCaixa this.movCaixa);
 
   @override
   State<TileMovimentosCaixa> createState() => _TileMovimentosCaixaState();
@@ -16,9 +15,16 @@ TileMovimentosCaixa(MovCaixa this.movCaixa);
 class _TileMovCaixaState extends State<TileMovimentosCaixa> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: Text(widget.movCaixa.data.toString()),
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      elevation: 6,
+      child: Container(
+        color: Colors.blue,
+        child: Text(widget.movCaixa.data),
+      ),
     );
   }
 }

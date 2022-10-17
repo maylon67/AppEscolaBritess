@@ -8,8 +8,10 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
 class ListaPage extends StatefulWidget {
-  const ListaPage({Key? key}) : super(key: key);
-
+//  const ListaPage({Key? key}) : super(key: key);
+  
+  ListaPage(this.listMovCaixa);
+  List<MovCaixa> listMovCaixa;
   //PRECISA RECEBER UM LIST<MOVCAIXA> AQUI
   //EXEMPLO
   // LOGIN_PAGE -> HOME_PAGE
@@ -20,13 +22,11 @@ class ListaPage extends StatefulWidget {
 
 class _ListaPageState extends State<ListaPage> {
   ScrollController listaControle = ScrollController();
-   List<MovCaixa> listMovCaixa = [];
-  String generateMd5(String input) {
-    return md5.convert(utf8.encode(input)).toString();
-  } 
 
   @override
   Widget build(BuildContext context) {
+    widget.listMovCaixa.forEach(((element) => print(element)));
+    
     return Scaffold(
       backgroundColor: Colors.white, 
       appBar: AppBar(
@@ -34,19 +34,19 @@ class _ListaPageState extends State<ListaPage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
-      body: ListView.separated(
+      body: ListView.builder(
         shrinkWrap: true,
         itemBuilder: (context, indice){
           //USAR O LIST<MOVCAIXA> RECEBIDO POR PARAMETRO
-      return TileMovimentosCaixa(listMovCaixa[indice]);
+        return TileMovimentosCaixa(widget.listMovCaixa[indice]);
       },
-      separatorBuilder: (_, __) => Divider(
-        color: corPadrao2,
-        height: 30,
-        thickness: 1.5,
-      ),
+      // separatorBuilder: (_, __) => Divider(
+      //   color: corPadrao2,
+      //   height: 30,
+      //   thickness: 1.5,
+      // ),
       physics: NeverScrollableScrollPhysics(),
-      itemCount: listMovCaixa.length,
+      itemCount: widget.listMovCaixa.length,
       ),
     );
   }
