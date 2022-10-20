@@ -16,16 +16,33 @@ class _TileMovCaixaState extends State<TileMovimentosCaixa> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+     // color: Colors.transparent,
       child: Row(
         children: [
           Column(
             children: [
               Text(
                 widget.movCaixa.data,
-                style: TextStyle(),
+                style: TextStyle(
+                  color: Colors.black, 
+                  fontSize: 16, 
+                  fontWeight: FontWeight.bold,
+                  ),
+                textAlign: TextAlign.center,
                 ),
+                Divider(
+                  color: Colors.black,
+                  height: 0,
+                  thickness: 1.5,
+                )
             ],
+          ),
+          Container(
+            height: 50,
+            child: VerticalDivider(
+              color: Colors.black,
+              thickness: 1.5,
+            ),
           ),
           Column(
             children: [
