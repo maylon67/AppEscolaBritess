@@ -34,19 +34,23 @@ class _ListaPageState extends State<ListaPage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
-      body: ListView.builder(
-        shrinkWrap: true,
-        itemBuilder: (context, indice){
-          //USAR O LIST<MOVCAIXA> RECEBIDO POR PARAMETRO
-        return TileMovimentosCaixa(widget.listMovCaixa[indice]);
-      },
-      // separatorBuilder: (_, __) => Divider(
-      //   color: corPadrao2,
-      //   height: 30,
-      //   thickness: 1.5,
-      // ),
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: widget.listMovCaixa.length,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, indice){
+              //USAR O LIST<MOVCAIXA> RECEBIDO POR PARAMETRO
+            return TileMovimentosCaixa(widget.listMovCaixa[indice]);
+          },
+          // separatorBuilder: (_, __) => Divider(
+          //   color: corPadrao2,
+          //   height: 30,
+          //   thickness: 1.5,
+          // ),
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: widget.listMovCaixa.length,
+          ),
+        ),
       ),
     );
   }
