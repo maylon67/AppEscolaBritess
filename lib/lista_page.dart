@@ -10,7 +10,7 @@ import 'package:crypto/crypto.dart';
 class ListaPage extends StatefulWidget {
 //  const ListaPage({Key? key}) : super(key: key);
   
-  ListaPage(this.listMovCaixa);
+  ListaPage(this.listMovCaixa,);
   List<MovCaixa> listMovCaixa;
   //PRECISA RECEBER UM LIST<MOVCAIXA> AQUI
   //EXEMPLO
