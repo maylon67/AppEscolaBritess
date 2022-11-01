@@ -455,7 +455,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => listaSegundaPage()));
+                                builder: (context) => listaSegundaPage(movimentosBanco)));
                       }),
                 ),
               ],

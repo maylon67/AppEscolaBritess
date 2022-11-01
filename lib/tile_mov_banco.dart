@@ -1,17 +1,17 @@
-import 'package:app_escola_bites/models/movimento_caixa_models.dart';
+import 'package:app_escola_bites/models/movimento_models.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TileMovimentosCaixa extends StatefulWidget {
- // const TileMovCaixa({ Key? key }) : super(key: key);
-   MovCaixa movCaixa;
-   TileMovimentosCaixa(this.movCaixa);
+class TileMovBanco extends StatefulWidget {
+ // const TileMovBanco({ Key? key }) : super(key: key);
+ Movimento movBanco;
+ TileMovBanco(this.movBanco);
 
   @override
-  State<TileMovimentosCaixa> createState() => _TileMovCaixaState();
+  State<TileMovBanco> createState() => _TileMovBancoState();
 }
 
-class _TileMovCaixaState extends State<TileMovimentosCaixa> {
+class _TileMovBancoState extends State<TileMovBanco> {
   static var f = NumberFormat("##,###,##0.00", "pt-br");
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class _TileMovCaixaState extends State<TileMovimentosCaixa> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  widget.movCaixa.data,
+                  widget.movBanco.data,
                   style: TextStyle(
                     color: Colors.black, 
                     fontSize: 16, 
                     fontWeight: FontWeight.bold,
                     ),
-                 // textAlign: TextAlign.center,
+                  textAlign: TextAlign.center,
                   ),
               ),
                 Divider(
@@ -51,12 +51,12 @@ class _TileMovCaixaState extends State<TileMovimentosCaixa> {
           ),
           Column(
             children: [
-              Text(widget.movCaixa.operacao, style: TextStyle(
+              Text(widget.movBanco.operacao, style: TextStyle(
                   color: Colors.black, 
                   fontSize: 16, 
                   fontWeight: FontWeight.bold,
               ),
-             // textAlign: TextAlign.center,
+              textAlign: TextAlign.center,
               ),
               Divider(
                 color: Colors.black,
@@ -74,12 +74,12 @@ class _TileMovCaixaState extends State<TileMovimentosCaixa> {
           ),
           Column(
             children: [
-              Text(widget.movCaixa.tipo, style: TextStyle(
+              Text(widget.movBanco.tipo, style: TextStyle(
                   color: Colors.black, 
                   fontSize: 16, 
                   fontWeight: FontWeight.bold,
               ),
-             // textAlign: TextAlign.center,
+              textAlign: TextAlign.center,
               ),
               Divider(
                 color: Colors.black,
@@ -99,12 +99,12 @@ class _TileMovCaixaState extends State<TileMovimentosCaixa> {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(f.format(widget.movCaixa.valor), style: TextStyle(
+                child: Text(f.format(widget.movBanco.vlrmovbco), style: TextStyle(
                     color: Colors.black, 
                     fontSize: 16, 
                     fontWeight: FontWeight.bold,
                 ),
-               // textAlign: TextAlign.end,
+                textAlign: TextAlign.end,
                 ),
               ),
               Divider(
