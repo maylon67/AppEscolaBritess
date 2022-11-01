@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TileMovBanco extends StatefulWidget {
- // const TileMovBanco({ Key? key }) : super(key: key);
- Movimento movBanco;
- TileMovBanco(this.movBanco);
+  // const TileMovBanco({ Key? key }) : super(key: key);
+  Movimento movBanco;
+  TileMovBanco(this.movBanco);
 
   @override
   State<TileMovBanco> createState() => _TileMovBancoState();
@@ -16,106 +16,92 @@ class _TileMovBancoState extends State<TileMovBanco> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-     // color: Colors.transparent,
-      child: Row( 
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  widget.movBanco.data,
-                  style: TextStyle(
-                    color: Colors.black, 
-                    fontSize: 16, 
-                    fontWeight: FontWeight.bold,
-                    ),
-                  textAlign: TextAlign.center,
-                  ),
-              ),
-                Divider(
+        // color: Colors.transparent,
+        child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              height: 40,
+              child: Text(
+                widget.movBanco.data,
+                style: TextStyle(
                   color: Colors.black,
-                  height: 0,
-                  thickness: 1.5,
-                )
-            ],
-          ),
-          Container(
-            height: 50,
-            child: VerticalDivider(
-              color: Colors.black,
-              thickness: 1.5,
-            ),
-          ),
-          Column(
-            children: [
-              Text(widget.movBanco.operacao, style: TextStyle(
-                  color: Colors.black, 
-                  fontSize: 16, 
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-              ),
-              Divider(
-                color: Colors.black,
-                height: 0,
-                thickness: 1.5,
-              )
-            ],
-          ),
-           Container(
-            height: 50,
-            child: VerticalDivider(
-              color: Colors.black,
-              thickness: 1.5,
             ),
-          ),
-          Column(
-            children: [
-              Text(widget.movBanco.tipo, style: TextStyle(
-                  color: Colors.black, 
-                  fontSize: 16, 
+            Container(
+              height: 40,
+              child: VerticalDivider(
+                color: Colors.black,
+                thickness: 1,
+              ),
+            ),
+            Container(
+              height: 40,
+              width: 65,
+              child: Text(
+                widget.movBanco.operacao,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-              ),
-              Divider(
-                color: Colors.black,
-                height: 0,
-                thickness: 1.5,
-              )
-            ], 
-          ),
-           Container(
-            height: 50,
-            child: VerticalDivider(
-              color: Colors.black,
-              thickness: 1.5,
             ),
-          ),
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(f.format(widget.movBanco.vlrmovbco), style: TextStyle(
-                    color: Colors.black, 
-                    fontSize: 16, 
-                    fontWeight: FontWeight.bold,
+            Container(
+              height: 40,
+              child: VerticalDivider(
+                color: Colors.black,
+                thickness: 1.5,
+              ),
+            ),
+            Container(
+              height: 40,
+              width: 20,
+              child: Text(
+                widget.movBanco.tipo,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              height: 40,
+              child: VerticalDivider(
+                color: Colors.black,
+                thickness: 1.5,
+              ),
+            ),
+            Container(
+              height: 30,
+              width: 75,
+              child: Text(
+                f.format(widget.movBanco.vlrmovbco),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.end,
-                ),
               ),
-              Divider(
-                color: Colors.black,
-                height: 0,
-                thickness: 1.5,
-              )
-            ],
-          ),
-        ],
-      ),
-    );
+            ),
+          ],
+        ),
+        Divider(
+          height: 1,
+          thickness: 1,
+          color: Colors.black,
+        )
+      ],
+    ));
   }
 }
