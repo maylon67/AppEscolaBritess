@@ -18,7 +18,9 @@ class _TileMovBancoState extends State<TileMovBanco> {
     return Container(
         // color: Colors.transparent,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
