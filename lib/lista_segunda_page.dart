@@ -1,21 +1,16 @@
 import 'package:app_escola_bites/app_config.dart';
+import 'package:app_escola_bites/ext_banco_card.dart';
 import 'package:app_escola_bites/models/movimento_models.dart';
 import 'package:app_escola_bites/tile_mov_banco.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class listaSegundaPage extends StatefulWidget {
+class listaSegundaPage extends StatelessWidget {
  // const listaSegundaPage({Key? key}) : super(key: key);
 
- listaSegundaPage(this.listMovBanco);
- List<Movimento> listMovBanco;
+ listaSegundaPage(this.movBanco);
+ Movimento movBanco;
 
-  @override
-  State<listaSegundaPage> createState() => _listaSegundaPageState();
-}
-
-class _listaSegundaPageState extends State<listaSegundaPage> {
-  ScrollController controleLista = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,22 +20,13 @@ class _listaSegundaPageState extends State<listaSegundaPage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemBuilder: (context, indice){
-              //USAR O LIST<MOVCAIXA> RECEBIDO POR PARAMETRO
-            return TileMovBanco(widget.listMovBanco[indice]);
-          },
-          // separatorBuilder: (_, __) => Divider(
-          //   color: corPadrao2,
-          //   height: 30,
-          //   thickness: 1.5,
-          // ),
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: widget.listMovBanco.length,
-          ),
+      body:SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+           // TileMovBanco(movBanco),
+            ExtratoBancoCard(movBanco.listMovBco),
+          ],
         ),
       ),
     );

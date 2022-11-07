@@ -4,6 +4,8 @@ import 'package:intl/intl.dart';
 class Movimento{
 
   static var f = NumberFormat('##,###s,##0', 'pt-br');
+
+  List<Movimento> listMovBco = [];
   
   String data = '';
   String operacao = '';
