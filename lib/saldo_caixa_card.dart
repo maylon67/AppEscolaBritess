@@ -1,13 +1,13 @@
 import 'package:app_escola_bites/app_config.dart';
-import 'package:app_escola_bites/models/movimento_models.dart';
+import 'package:app_escola_bites/models/movimento_caixa_models.dart';
 import 'package:flutter/material.dart';
 
-class ExtratoBancoCard extends StatelessWidget {
+class SaldoCaixaCard extends StatelessWidget {
  // const ExtratoBancoCard({ Key? key }) : super(key: key);
 
- ExtratoBancoCard(this.movBanco);
+ SaldoCaixaCard(this.movCaixa);
 
-  List<Movimento> movBanco;
+  List<MovCaixa> movCaixa;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,9 @@ class ExtratoBancoCard extends StatelessWidget {
                 children: [
                   createHeadLine(
                       "Data;Operação;Tipo;Valor"),
-                  for (Movimento i in movBanco)
+                  for (MovCaixa i in movCaixa)
                     createTable(
-                        "${i.data};${i.operacao};${i.tipo};${i.vlrmovbco}"),
+                        "${i.data};${i.operacao};${i.tipo};${i.valor}"),
                 ],
               ),
             )

@@ -6,7 +6,7 @@ class MovCaixa{
 
   static var f = NumberFormat('##,###,##0', 'pt-br');
 
-  List<Movimento> listMovBco = [];
+  List<Movimento> listMovCaixa = [];
   
   String data = '';
   String operacao = '';

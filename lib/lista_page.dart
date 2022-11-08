@@ -1,5 +1,6 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/models/movimento_caixa_models.dart';
+import 'package:app_escola_bites/saldo_caixa_card.dart';
 import 'package:app_escola_bites/tile_mov_caixa.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,26 +8,19 @@ import 'package:app_escola_bites/home_page.dart';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
-class ListaPage extends StatefulWidget {
+class ListaPage extends StatelessWidget {
 //  const ListaPage({Key? key}) : super(key: key);
-  
-  ListaPage(this.listMovCaixa,);
-  List<MovCaixa> listMovCaixa;
+
+  ListaPage(this.movCaixa,);
+  MovCaixa movCaixa;
   //PRECISA RECEBER UM LIST<MOVCAIXA> AQUI
   //EXEMPLO
   // LOGIN_PAGE -> HOME_PAGE
 
-  @override
-  State<ListaPage> createState() => _ListaPageState();
-}
-
-class _ListaPageState extends State<ListaPage> {
   ScrollController listaControle = ScrollController();
 
   @override
-  Widget build(BuildContext context) {
-    widget.listMovCaixa.forEach(((element) => print(element)));
-    
+  Widget build(BuildContext context) {    
     return Scaffold(
       backgroundColor: Colors.white, 
       appBar: AppBar(
@@ -34,22 +28,13 @@ class _ListaPageState extends State<ListaPage> {
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemBuilder: (context, indice){
-              //USAR O LIST<MOVCAIXA> RECEBIDO POR PARAMETRO
-            return TileMovimentosCaixa(widget.listMovCaixa[indice]);
-          },
-          // separatorBuilder: (_, __) => Divider(
-          //   color: corPadrao2,
-          //   height: 30,
-          //   thickness: 1.5,
-          // ),
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: widget.listMovCaixa.length,
-          ),
+      body:SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+          //  TileMovimentosCaixa(movCaixa),
+          //  SaldoCaixaCard(movCaixa.listMovCaixa),
+          ],
         ),
       ),
     );
