@@ -1,6 +1,7 @@
 import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/models/movimento_models.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ExtratoBancoCard extends StatelessWidget {
  // const ExtratoBancoCard({ Key? key }) : super(key: key);
@@ -9,6 +10,7 @@ class ExtratoBancoCard extends StatelessWidget {
 
   List<Movimento> movBanco;
 
+   static var f = NumberFormat("##,###,##0.00", "pt-br");
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -34,7 +36,7 @@ class ExtratoBancoCard extends StatelessWidget {
               child: Table(
                 columnWidths: const <int, TableColumnWidth>{
                   0: FixedColumnWidth(110),
-                  1: FixedColumnWidth(90),
+                  1: FixedColumnWidth(112),
                   2: FixedColumnWidth(90),
                   3: FixedColumnWidth(110),
                 },
@@ -43,7 +45,7 @@ class ExtratoBancoCard extends StatelessWidget {
                       "Data;Operação;Tipo;Valor"),
                   for (Movimento i in movBanco)
                     createTable(
-                        "${i.data};${i.operacao};${i.tipo};${i.vlrmovbco}"),
+                        "${i.data};${i.operacao};${i.tipo};${f.format(i.vlrmovbco)}"),
                 ],
               ),
             )

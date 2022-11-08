@@ -9,7 +9,7 @@ class ListaSegundaPage extends StatelessWidget {
  // const listaSegundaPage({Key? key}) : super(key: key);
 
  ListaSegundaPage(this.movBanco);
- Movimento movBanco;
+ List<Movimento> movBanco;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,8 @@ class ListaSegundaPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TileMovBanco(movBanco),
-            ExtratoBancoCard(movBanco.listMovBco),
+           // TileMovBanco(movBanco.first),
+            ExtratoBancoCard(movBanco),
           ],
         ),
       ),
