@@ -407,7 +407,7 @@ class _HomePageState extends State<HomePage> {
                                //ENVIAR O LIST<MOVCAIXA> QUE FOI BUSCADO NO WS AQUI
                                // EXEMPLO:
                                // builder: (context) => ListaPage(movimentosCaixa)));
-                                builder: (context) => ListaPage(movimentosCaixa.first)));
+                                builder: (context) => ListaPage(movimentosCaixa)));
                       }),
                 ),
                 Padding(

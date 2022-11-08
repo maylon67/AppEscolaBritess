@@ -12,7 +12,7 @@ class ListaPage extends StatelessWidget {
 //  const ListaPage({Key? key}) : super(key: key);
 
   ListaPage(this.movCaixa,);
-  MovCaixa movCaixa;
+ List<MovCaixa> movCaixa;
   //PRECISA RECEBER UM LIST<MOVCAIXA> AQUI
   //EXEMPLO
   // LOGIN_PAGE -> HOME_PAGE
@@ -32,8 +32,8 @@ class ListaPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-          //  TileMovimentosCaixa(movCaixa),
-          //  SaldoCaixaCard(movCaixa.listMovCaixa),
+           // TileMovimentosCaixa(movCaixa.first),
+            SaldoCaixaCard(movCaixa),
           ],
         ),
       ),
