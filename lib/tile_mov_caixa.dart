@@ -6,7 +6,7 @@ class TileMovimentosCaixa extends StatefulWidget {
  // const TileMovCaixa({ Key? key }) : super(key: key);
    MovCaixa movCaixa;
    TileMovimentosCaixa(this.movCaixa);
-
+   
   @override
   State<TileMovimentosCaixa> createState() => _TileMovCaixaState();
 }
@@ -15,6 +15,11 @@ class _TileMovCaixaState extends State<TileMovimentosCaixa> {
   static var f = NumberFormat("##,###,##0.00", "pt-br");
   @override
   Widget build(BuildContext context) {
+    if (widget.movCaixa.tipo == 'D') {
+     widget.movCaixa.tipo == '+';
+   } else if(widget.movCaixa.tipo == 'C') {
+    widget.movCaixa.tipo == '-';
+   }
     return Container(
         // color: Colors.transparent,
         child: Column(
