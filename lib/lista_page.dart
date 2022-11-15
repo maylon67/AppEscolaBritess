@@ -24,7 +24,7 @@ class ListaPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white, 
       appBar: AppBar(
-        title: Text('Saldo Bancario'),
+        title: Text('Extrato do Aluno'),
         backgroundColor: corPadraoApp,
         centerTitle: true,
       ),

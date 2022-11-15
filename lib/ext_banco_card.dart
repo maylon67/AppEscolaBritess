@@ -32,7 +32,7 @@ class ExtratoBancoCard extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+             // scrollDirection: Axis.horizontal,
               child: Table(
                 columnWidths: const <int, TableColumnWidth>{
                   0: FixedColumnWidth(110),
@@ -63,7 +63,7 @@ class ExtratoBancoCard extends StatelessWidget {
             (names) => Column(
               children: [
                 Container(
-                  height: 80,
+                  height: 50,
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(8),
                   child: Text(
@@ -91,7 +91,7 @@ createTable(String listcontents) {
               (contents) => Column(
                 children: [
                   Container(
-                    height: 55,
+                    height: 30,
                     padding: EdgeInsets.all(8),
                     alignment: Alignment.center,
                     child: Text(

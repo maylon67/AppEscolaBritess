@@ -24,7 +24,7 @@ class SaldoCaixaCard extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "EXTRATO BANCARIO",
+              "EXTRATO DO ALUNO",
               style: TextStyle(
                   color: corPadraoApp,
                   fontWeight: FontWeight.bold,
@@ -32,21 +32,24 @@ class SaldoCaixaCard extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Table(
-                columnWidths: const <int, TableColumnWidth>{
-                  0: FixedColumnWidth(110),
-                  1: FixedColumnWidth(112),
-                  2: FixedColumnWidth(90),
-                  3: FixedColumnWidth(110),
-                },
-                children: [
-                  createHeadLine(
-                      "Data;Operação;Tipo;Valor"),
-                  for (MovCaixa i in movCaixa)
-                    createTable(
-                        "${i.data};${i.operacao};${i.tipo};${f.format(i.valor)}"),
-                ],
+             // scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 0),
+                child: Table(
+                  columnWidths: const <int, TableColumnWidth>{
+                    0: FixedColumnWidth(110),
+                    1: FixedColumnWidth(112),
+                    2: FixedColumnWidth(90),
+                    3: FixedColumnWidth(110),
+                  },
+                  children: [
+                    createHeadLine(
+                        "Data;Operação;Tipo;Valor"),
+                    for (MovCaixa i in movCaixa)
+                      createTable(
+                          "${i.data};${i.operacao};${i.tipo};${f.format(i.valor)}"),
+                  ],
+                ),
               ),
             )
           ],
@@ -63,7 +66,7 @@ class SaldoCaixaCard extends StatelessWidget {
             (names) => Column(
               children: [
                 Container(
-                  height: 80,
+                  height: 50,
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(8),
                   child: Text(
@@ -91,7 +94,7 @@ createTable(String listcontents) {
               (contents) => Column(
                 children: [
                   Container(
-                    height: 55,
+                    height: 30,
                     padding: EdgeInsets.all(8),
                     alignment: Alignment.center,
                     child: Text(
