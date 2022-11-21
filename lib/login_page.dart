@@ -2,6 +2,7 @@ import 'package:app_escola_bites/app_config.dart';
 import 'package:app_escola_bites/home_page.dart';
 import 'package:app_escola_bites/services/querys/ws_login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'dart:convert';
@@ -24,6 +25,11 @@ TextEditingController senhaControle = TextEditingController();
 TextEditingController userControlle = TextEditingController();
 
 class _LoginPageState extends State<LoginPage> {
+  List<String> users= [];
+
+  final emailFocus = FocusNode();
+  final passwordFocus = FocusNode();
+  
   bool estaObscuro = true;
   @override
   Widget build(BuildContext context) {
@@ -60,76 +66,93 @@ class _LoginPageState extends State<LoginPage> {
                           height: 90,
                         ),
                         Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            side: BorderSide(
-                                color: Color(0xff083d99), width: 2.5),
-                          ),
-                          child: TextFormField(
-                            controller: emailControle,      
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(vertical: 5),
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              disabledBorder: InputBorder.none,
-                              prefixIcon: Icon(
-                                Ionicons.mail_sharp,
-                                color: Color(0xFF083d99),
-                              ),
-                              labelText: 'Seu email',
-                              labelStyle: GoogleFonts.oswald(
-                                color: Color(0xff083d99),
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                          shadowColor: Color.fromARGB(255, 14, 59, 136),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
+                            shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
-                              side: BorderSide(
-                                  color: Color(0xff083d99), width: 2.5)),
-                          child: TextFormField(
-                            controller: senhaControle,
-                            obscureText: estaObscuro,
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 12),
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              disabledBorder: InputBorder.none,
-                              prefixIcon: Icon(
-                                Ionicons.key,
-                                color: corPadraoApp,
+                            ),
+                            elevation: 6,
+                            child: TypeAheadField(
+                              suggestionsBoxDecoration: SuggestionsBoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white
                               ),
-                              suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() => estaObscuro = !estaObscuro);
-                                },
-                                icon: Icon(
-                                  estaObscuro
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                  color: corPadraoApp,
+                              textFieldConfiguration: TextFieldConfiguration(
+                                focusNode: emailFocus,
+                              controller: emailControle,
+                              style: TextStyle(
+                                  fontSize: 18,
+                                 // fontFamily: primaryFont,
+                                  color: Colors.black),
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.symmetric(vertical: 5),
+                                border: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                enabledBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                disabledBorder: InputBorder.none,
+                                prefixIcon: Icon(
+                                  Icons.mail,
+                                  color: Color(0xFF083D99),
                                 ),
+                                labelText: 'Email',
+                                labelStyle: TextStyle(
+                                    fontSize: 18, color: Color(0xFF083D99),),
+                                alignLabelWithHint: false,
                               ),
-                              labelText: 'Sua Senha',
-                              labelStyle: GoogleFonts.oswald(
-                                color: Color(0xff083d99),
-                                fontSize: 20,
+                              ),
+                              noItemsFoundBuilder: (context) => Container(height: 0, width: 0),
+                              loadingBuilder: (context) => Container(height: 0, width: 0),
+                              suggestionsCallback: (pattern) async { 
+                                if (pattern == "") return users;     
+                                return users.where((element) => element.contains(pattern));
+                              },
+                              itemBuilder: (context, String suggestion) => ListTile(
+                                title: Text(suggestion)
+                              ),
+                              onSuggestionSelected: (String suggestion) {
+                                emailControle.text = suggestion;
+                              },
+                            ),
+                          ),
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            elevation: 6,
+                            child: TextFormField(
+                              obscureText: estaObscuro,
+                              focusNode: passwordFocus,
+                              controller: senhaControle,
+                              style: TextStyle(
+                                fontSize: 18,
+                               // fontFamily: primaryFont,
+                                color: Colors.black,
+                              ),
+                              decoration: InputDecoration(
+                                errorStyle: TextStyle(),
+                                contentPadding: EdgeInsets.symmetric(vertical: 5),
+                                border: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                enabledBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                disabledBorder: InputBorder.none,
+                                prefixIcon: Icon(
+                                  Icons.vpn_key,
+                                  color: Color(0xFF083D99),
+                                ),
+                                labelText: 'Senha',
+                                labelStyle: TextStyle(
+                                    fontSize: 18, color: Color(0xFF083D99),),
+                                alignLabelWithHint: false,
+                                suffixIcon: IconButton(
+                                onPressed: (){setState(() => estaObscuro = !estaObscuro);}, 
+                                icon: Icon(
+                                  estaObscuro ? Icons.visibility : Icons.visibility_off, 
+                                  color: Color(0xFF083D99),
+                                )
+                              ),
                               ),
                             ),
                           ),
-                          shadowColor: Color.fromARGB(255, 14, 59, 136),
-                        ),
                         SizedBox(height: 67),
                         Row(
                           children: [
