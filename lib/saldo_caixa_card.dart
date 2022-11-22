@@ -47,7 +47,7 @@ class SaldoCaixaCard extends StatelessWidget {
                         "Data;Operação;Tipo;Valor"),
                     for (MovCaixa i in movCaixa)
                       createTable(
-                          "${i.data};${i.operacao};${i.tipo};${f.format(i.valor)}"),
+                          "${i.data};${i.operacao};${i.tipo == 'D' ? '+' : '-'};${f.format(i.valor)}"),
                   ],
                 ),
               ),
