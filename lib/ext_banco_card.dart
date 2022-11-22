@@ -45,7 +45,7 @@ class ExtratoBancoCard extends StatelessWidget {
                       "Data;Operação;Tipo;Valor"),
                   for (Movimento i in movBanco)
                     createTable(
-                        "${i.data};${i.operacao};${i.tipo};${f.format(i.vlrmovbco)}"),
+                        "${i.data};${i.operacao};${i.tipo == 'D' ? '+' : '-'};${f.format(i.vlrmovbco)}"),
                 ],
               ),
             )
