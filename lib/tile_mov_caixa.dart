@@ -70,7 +70,7 @@ class _TileMovCaixaState extends State<TileMovimentosCaixa> {
               height: 40,
               width: 20,
               child: Text(
-                widget.movCaixa.tipo == 'C' ? widget.movCaixa.tipo = '+': widget.movCaixa.tipo = '-',
+                widget.movCaixa.tipo,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
