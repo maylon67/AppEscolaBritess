@@ -25,10 +25,12 @@ TextEditingController senhaControle = TextEditingController();
 TextEditingController userControlle = TextEditingController();
 
 class _LoginPageState extends State<LoginPage> {
-  List<String> users= [];
+  List<String> users= []; 
 
   final emailFocus = FocusNode();
   final passwordFocus = FocusNode();
+  final trimmed = '\tDart is fun\n'.trim();
+  //print(trimmed); // 'Dart is fun'
   
   bool estaObscuro = true;
   @override
@@ -160,23 +162,23 @@ class _LoginPageState extends State<LoginPage> {
                               child: RaisedButton(
                                onPressed: () async {
                                   numeroDoCaixa = await WsLogin().getLogin(
-                                      emailControle.text,
-                                      textToMd5(senhaControle.text));
+                                      emailControle.text.trim(),
+                                      textToMd5(senhaControle.text.trim()));
                                   //testar se numero do caixa e diferente de 0
-                                  if (numeroDoCaixa.codigoCaixa == 0) {
-                                    Text(
-                                      'Login Invalido',
-                                      style: GoogleFonts.reemKufi(
-                                          color: Colors.red, fontSize: 13),
-                                    );
-                                  } else {
+                                 // if (numeroDoCaixa.codigoCaixa == 0) {
+                                 //   Text(
+                                 //     'Login Invalido',
+                                 //     style: GoogleFonts.reemKufi(
+                                 //         color: Colors.red, fontSize: 13),
+                                 //   );
+                                 // } else {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (_) =>
                                               HomePage(numeroDoCaixa),),
                                     );
-                                  }
+                                 // }
                                 },
                                 child: Text(
                                   'Login',
