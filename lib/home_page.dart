@@ -18,10 +18,9 @@ import 'models/metacaixa.dart';
 import 'models/movimento_models.dart';
 import 'models/saldo_banco_models.dart';
 
-
 class HomePage extends StatefulWidget {
   // HomePage(int numeroDoCaixa, {Key? key}) : super(key: key);
- HomePage(this.login);
+  HomePage(this.login);
   //homepage precisa receber o numero recebido na funcao de login na LoginPage
 
   Login login;
@@ -34,52 +33,55 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   bool isLoading = true;
- late List<MovCaixa> movimentosCaixa;
- late List<Movimento> movimentosBanco;
- late SaldoCaixa saldoCaixa;
- late SaldoBanco saldoBanco;
- late MetaCaixa metaCaixa;
- static var f = NumberFormat("##,###,##0.00", "pt-br");
+  late List<MovCaixa> movimentosCaixa;
+  late List<Movimento> movimentosBanco;
+  late SaldoCaixa saldoCaixa;
+  late SaldoBanco saldoBanco;
+  late MetaCaixa metaCaixa;
+  static var f = NumberFormat("##,###,##0.00", "pt-br");
 
   teste() async {
-  //   MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
-  //   print(metaCaixa);
-  //   // Instance of 'MetaCaixa'
-  //   List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
-  //   movimentosBanco.forEach((element) { print(element); });
-  //   List<MovCaixa> movCaixa = await WsMovCaixa().getMovCaixa(16.toString());
-  //   movCaixa.forEach((element) {print(element);});
-  //   SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
-  //   print(saldoCaixa);
-  //    SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
-  // print(getSaldoBanco);
-    
+    //   MetaCaixa metaCaixa = await WsMetaCaixa().getMetaCaixa(16);
+    //   print(metaCaixa);
+    //   // Instance of 'MetaCaixa'
+    //   List<Movimento> movimentosBanco = await WsMovimentoBanco().getMoviBanco();
+    //   movimentosBanco.forEach((element) { print(element); });
+    //   List<MovCaixa> movCaixa = await WsMovCaixa().getMovCaixa(16.toString());
+    //   movCaixa.forEach((element) {print(element);});
+    //   SaldoCaixa saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(16.toString());
+    //   print(saldoCaixa);
+    //    SaldoBanco getSaldoBanco = await WsSaldoBanco().getSaldoBanco();
+    // print(getSaldoBanco);
+
     // executar outras chamadas de ws
-    // print das variaveis, caso apresente um erro tipo: 
+    // print das variaveis, caso apresente um erro tipo:
     //       ===  ERROR  getMovBanco : type 'Null' is not a subtype of type 'String' ===
     // houve erro ao processar o json no ws ou no fromJson()
-    
   }
-  _loadData() async{
-   metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa.codigoCaixa);
-  //todo//     chamada do metodo metaCaixa
-   movimentosBanco = await WsMovimentoBanco().getMoviBanco();
-  movimentosBanco.forEach((element) { print(element); });
-  // chamada do metodo do getmovbanco
-   movimentosCaixa = await WsMovCaixa().getMovCaixa(numeroDoCaixa.codigoCaixa.toString());
-  movimentosCaixa.forEach((element) {print(element);});
-  // chamada do metodo do getmovCaixa
-   saldoCaixa = await WsSaldoCaixa().getSaldoCaixa(numeroDoCaixa.codigoCaixa.toString());
-  print(saldoCaixa);
-  // chamada do metodo do getSaldoCaixa
-   saldoBanco = await WsSaldoBanco().getSaldoBanco();
-  print(saldoBanco);
-   
-  setState(() {
-    isLoading = false;
-  });
+  _loadData() async {
+    metaCaixa = await WsMetaCaixa().getMetaCaixa(numeroDoCaixa.codigoCaixa);
+    //todo//     chamada do metodo metaCaixa
+    movimentosBanco = await WsMovimentoBanco().getMoviBanco();
+    movimentosBanco.forEach((element) {
+      print(element);
+    });
+    // chamada do metodo do getmovbanco
+    movimentosCaixa =
+        await WsMovCaixa().getMovCaixa(numeroDoCaixa.codigoCaixa.toString());
+    movimentosCaixa.forEach((element) {
+      print(element);
+    });
+    // chamada do metodo do getmovCaixa
+    saldoCaixa = await WsSaldoCaixa()
+        .getSaldoCaixa(numeroDoCaixa.codigoCaixa.toString());
+    print(saldoCaixa);
+    // chamada do metodo do getSaldoCaixa
+    saldoBanco = await WsSaldoBanco().getSaldoBanco();
+    print(saldoBanco);
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
@@ -99,370 +101,381 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color.fromARGB(255, 255, 247, 247),
       appBar: AppBar(
         title: Text(
-          'Seja bem vindo(a),'+ numeroDoCaixa.noCaixa,
+          'Seja bem vindo(a),' + numeroDoCaixa.noCaixa,
           style: GoogleFonts.reemKufi(fontSize: 25),
         ),
         backgroundColor: corPadraoApp,
         centerTitle: true,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusDirectional.circular(25)),     
+            borderRadius: BorderRadiusDirectional.circular(25)),
       ),
       body: isLoading
-      ? Center(
-        child: CircularProgressIndicator(
-          color: corPadraoApp,
-        ),
-      ) : SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 1),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 3),
-                  child: GestureDetector(
-                      child: Card(
-                        color: Colors.white,
-                        elevation: 6,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          side: BorderSide(
-                            color: corPadraoApp,
-                            width: 2.5,
-                          ),
-                        ),
-                        child: Column(
-                          children: [
-                            Center(
-                              child: Text(
-                                'Seu Saldo',
-                                style: GoogleFonts.openSans(
+          ? Center(
+              child: CircularProgressIndicator(
+                color: corPadraoApp,
+              ),
+            )
+          : SafeArea(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 1),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 3),
+                        child: GestureDetector(
+                            child: Card(
+                              color: Colors.white,
+                              elevation: 6,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side: BorderSide(
                                   color: corPadraoApp,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 25,
+                                  width: 2.5,
                                 ),
                               ),
-                            ),
-                            Center(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(vertical: 0),
-                                child: Text(
-                                  f.format(saldoCaixa.valorSaldoFim),
-                                  style: GoogleFonts.oswald(
-                                      fontSize: 42,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Divider(
-                              height: 0,
-                              color: Colors.black,
-                              thickness: 1.5,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 25),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
+                              child: Column(
                                 children: [
-                                  Expanded(
-                                      child: Text(
-                                    'Tipo',
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1.5,
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Text(
-                                    'Mensalidade',
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                        textAlign: TextAlign.center,
-                                  )),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Color.fromRGBO(0, 0, 0, 1),
-                                      thickness: 1.5,
-                                    ),
-                                  ),
-                                  Expanded(
+                                  Center(
                                     child: Text(
-                                      'Rifa',
-                                      style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
+                                      'Seu Saldo',
+                                      style: GoogleFonts.openSans(
+                                        color: corPadraoApp,
                                         fontWeight: FontWeight.bold,
+                                        fontSize: 25,
                                       ),
-                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 0),
+                                      child: Text(
+                                        f.format(saldoCaixa.valorSaldoFim),
+                                        style: GoogleFonts.oswald(
+                                            fontSize: 42,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black),
+                                      ),
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 10,
-                                  )
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 0,
-                              color: Colors.black,
-                              thickness: 1.5,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 25),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Expanded(
-                                      child: Text(
-                                    'Objetivo',
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1.5,
+                                    height: 15,
+                                  ),
+                                  Divider(
+                                    height: 0,
+                                    color: Colors.black,
+                                    thickness: 1.5,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 25),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Expanded(
+                                            child: Text(
+                                          'Tipo',
+                                          style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Colors.black,
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                            child: Text(
+                                          'Mensalidade',
+                                          style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.center,
+                                        )),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Color.fromRGBO(0, 0, 0, 1),
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            'Rifa',
+                                            style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  Expanded(
-                                    child: Text(
-                                     '2.260,00',
-                                      style: GoogleFonts.oswald(
-                                          color: Colors.black,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                  Divider(
+                                    height: 0,
+                                    color: Colors.black,
+                                    thickness: 1.5,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 25),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Expanded(
+                                            child: Text(
+                                          'Objetivo',
+                                          style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Colors.black,
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            '2.260,00',
+                                            style: GoogleFonts.oswald(
+                                                color: Colors.black,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                            textAlign: TextAlign.end,
+                                          ),
+                                        ),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Colors.black,
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            '1.400,00',
+                                            style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            textAlign: TextAlign.end,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Divider(
+                                    height: 0,
+                                    color: Colors.black,
+                                    thickness: 1.5,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 25),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Expanded(
+                                          child: Text(
+                                            'Arrecadado',
+                                            style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Colors.black,
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                            child: Text(
+                                          f.format(metaCaixa.mensalidade),
+                                          style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
                                           textAlign: TextAlign.end,
+                                        )),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Colors.black,
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                            child: Text(
+                                          f.format(metaCaixa.rifa),
+                                          style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.end,
+                                        )),
+                                        SizedBox(
+                                          width: 10,
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1.5,
+                                  Divider(
+                                    height: 0,
+                                    color: Colors.black,
+                                    thickness: 1.5,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 25),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: Text(
+                                          '% Atingida',
+                                          style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Colors.black,
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                            child: Text(
+                                          f.format(metaCaixa.percMensalidade),
+                                          style: GoogleFonts.oswald(
+                                              color: Color.fromARGB(
+                                                  255, 16, 16, 16),
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.end,
+                                        )),
+                                        Container(
+                                          height: 30,
+                                          child: VerticalDivider(
+                                            color: Colors.black,
+                                            thickness: 1.5,
+                                          ),
+                                        ),
+                                        Expanded(
+                                            child: Text(
+                                          f.format(metaCaixa.percRifa),
+                                          style: GoogleFonts.oswald(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.end,
+                                        )),
+                                        SizedBox(
+                                          width: 10,
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  Expanded(
-                                    child: Text(
-                                     '1.400,00',
-                                      style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                      textAlign: TextAlign.end,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  )
+                                  //  Divider(
+                                  //    height: 0,
+                                  //    color: Colors.black,
+                                  //    thickness: 1.5,
+                                  //  )
                                 ],
                               ),
                             ),
-                            Divider(
-                              height: 0,
-                              color: Colors.black,
-                              thickness: 1.5,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 25),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      'Arrecadado',
-                                      style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1.5,
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Text(
-                                    f.format(metaCaixa.mensalidade),
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                        textAlign: TextAlign.end,
-                                  )),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1.5,
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Text(
-                                    f.format(metaCaixa.rifa),
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                        textAlign: TextAlign.end,
-                                  )),
-                                  SizedBox(
-                                    width: 10,
-                                  )
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 0,
-                              color: Colors.black,
-                              thickness: 1.5,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 25),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                      child: Text(
-                                    '% Atingida',
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1.5,
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Text(
-                                    f.format(metaCaixa.percMensalidade),
-                                    style: GoogleFonts.oswald(
-                                        color: Color.fromARGB(255, 16, 16, 16),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                        textAlign: TextAlign.end,
-                                  )),
-                                  Container(
-                                    height: 30,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1.5,
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Text(
-                                    f.format(metaCaixa.percRifa),
-                                    style: GoogleFonts.oswald(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                        textAlign: TextAlign.end,
-                                  )),
-                                  SizedBox(
-                                    width: 10,
-                                  )
-                                ],
-                              ),
-                            ),
-                            //  Divider(
-                            //    height: 0,
-                            //    color: Colors.black,
-                            //    thickness: 1.5,
-                            //  )
-                          ],
-                        ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      //ENVIAR O LIST<MOVCAIXA> QUE FOI BUSCADO NO WS AQUI
+                                      // EXEMPLO:
+                                      // builder: (context) => ListaPage(movimentosCaixa)));
+                                      builder: (context) =>
+                                          ListaPage(movimentosCaixa)));
+                            }),
                       ),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                             MaterialPageRoute(
-                               //ENVIAR O LIST<MOVCAIXA> QUE FOI BUSCADO NO WS AQUI
-                               // EXEMPLO:
-                               // builder: (context) => ListaPage(movimentosCaixa)));
-                                builder: (context) => ListaPage(movimentosCaixa)));
-                      }),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 1),
-                  child: GestureDetector(
-                      child: Card(
-                        color: Colors.white,
-                        elevation: 6,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          side: BorderSide(color: corPadraoApp, width: 1.9),
-                        ),
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(vertical: 20),
-                            ),
-                            Center(
-                              child: Text(
-                                'Saldo Bancario',
-                                style: GoogleFonts.openSans(
-                                    color: corPadraoApp,
-                                    fontSize: 29,
-                                    fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 1),
+                        child: GestureDetector(
+                            child: Card(
+                              color: Colors.white,
+                              elevation: 6,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side:
+                                    BorderSide(color: corPadraoApp, width: 1.9),
+                              ),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 20),
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      'Saldo Bancario',
+                                      style: GoogleFonts.openSans(
+                                          color: corPadraoApp,
+                                          fontSize: 29,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 2)),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 25)),
+                                  Center(
+                                      child: Text(
+                                    f.format(saldoBanco.valoresDeFim),
+                                    style: GoogleFonts.oswald(
+                                        fontSize: 42,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  )),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 20)),
+                                ],
                               ),
                             ),
-                            Padding(padding: EdgeInsets.symmetric(vertical: 2)),
-                            Padding(
-                                padding: EdgeInsets.symmetric(vertical: 25)),
-                            Center(
-                                child: Text(
-                              f.format(saldoBanco.valoresDeFim),
-                              style: GoogleFonts.oswald(
-                                  fontSize: 42,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            )),
-                            Padding(
-                                padding: EdgeInsets.symmetric(vertical: 20)),
-                          ],
-                        ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ListaSegundaPage(movimentosBanco)));
+                            }),
                       ),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ListaSegundaPage(movimentosBanco)));
-                      }),
+                    ],
+                  ),
                 ),
-              ],
+              ),
             ),
-          ),
-        ),
-      ),
     );
   }
 }

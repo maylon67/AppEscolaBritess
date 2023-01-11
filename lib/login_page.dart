@@ -25,11 +25,11 @@ TextEditingController senhaControle = TextEditingController();
 TextEditingController userControlle = TextEditingController();
 
 class _LoginPageState extends State<LoginPage> {
-  List<String> users= [];
+  List<String> users = [];
 
   final emailFocus = FocusNode();
   final passwordFocus = FocusNode();
-  
+
   bool estaObscuro = true;
   @override
   Widget build(BuildContext context) {
@@ -38,8 +38,8 @@ class _LoginPageState extends State<LoginPage> {
         child: SingleChildScrollView(
           child: Container(
             height: altura(context) - MediaQuery.of(context).padding.top,
-            color: Color(0xFFFFFFFF),
-            child: Stack(
+            color:  Color(0xFFFFFFFF),
+            child: Stack(   
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 45),
@@ -66,24 +66,24 @@ class _LoginPageState extends State<LoginPage> {
                           height: 90,
                         ),
                         Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            elevation: 6,
-                            child: TypeAheadField(
-                              suggestionsBoxDecoration: SuggestionsBoxDecoration(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          elevation: 6,
+                          child: TypeAheadField(
+                            suggestionsBoxDecoration: SuggestionsBoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: Colors.white
-                              ),
-                              textFieldConfiguration: TextFieldConfiguration(
-                                focusNode: emailFocus,
+                                color: Colors.white),
+                            textFieldConfiguration: TextFieldConfiguration(
+                              focusNode: emailFocus,
                               controller: emailControle,
                               style: TextStyle(
                                   fontSize: 18,
-                                 // fontFamily: primaryFont,
+                                  // fontFamily: primaryFont,
                                   color: Colors.black),
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.symmetric(vertical: 5),
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 5),
                                 border: InputBorder.none,
                                 focusedBorder: InputBorder.none,
                                 enabledBorder: InputBorder.none,
@@ -95,70 +95,79 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 labelText: 'Email',
                                 labelStyle: TextStyle(
-                                    fontSize: 18, color: Color(0xFF083D99),),
-                                alignLabelWithHint: false,
-                              ),
-                              ),
-                              noItemsFoundBuilder: (context) => Container(height: 0, width: 0),
-                              loadingBuilder: (context) => Container(height: 0, width: 0),
-                              suggestionsCallback: (pattern) async { 
-                                if (pattern == "") return users;     
-                                return users.where((element) => element.contains(pattern));
-                              },
-                              itemBuilder: (context, String suggestion) => ListTile(
-                                title: Text(suggestion)
-                              ),
-                              onSuggestionSelected: (String suggestion) {
-                                emailControle.text = suggestion;
-                              },
-                            ),
-                          ),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            elevation: 6,
-                            child: TextFormField(
-                              obscureText: estaObscuro,
-                              focusNode: passwordFocus,
-                              controller: senhaControle,
-                              style: TextStyle(
-                                fontSize: 18,
-                               // fontFamily: primaryFont,
-                                color: Colors.black,
-                              ),
-                              decoration: InputDecoration(
-                                errorStyle: TextStyle(),
-                                contentPadding: EdgeInsets.symmetric(vertical: 5),
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                prefixIcon: Icon(
-                                  Icons.vpn_key,
+                                  fontSize: 18,
                                   color: Color(0xFF083D99),
                                 ),
-                                labelText: 'Senha',
-                                labelStyle: TextStyle(
-                                    fontSize: 18, color: Color(0xFF083D99),),
                                 alignLabelWithHint: false,
-                                suffixIcon: IconButton(
-                                onPressed: (){setState(() => estaObscuro = !estaObscuro);}, 
-                                icon: Icon(
-                                  estaObscuro ? Icons.visibility : Icons.visibility_off, 
-                                  color: Color(0xFF083D99),
-                                )
-                              ),
                               ),
                             ),
+                            noItemsFoundBuilder: (context) =>
+                                Container(height: 0, width: 0),
+                            loadingBuilder: (context) =>
+                                Container(height: 0, width: 0),
+                            suggestionsCallback: (pattern) async {
+                              if (pattern == "") return users;
+                              return users.where(
+                                  (element) => element.contains(pattern));
+                            },
+                            itemBuilder: (context, String suggestion) =>
+                                ListTile(title: Text(suggestion)),
+                            onSuggestionSelected: (String suggestion) {
+                              emailControle.text = suggestion;
+                            },
                           ),
+                        ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          elevation: 6,
+                          child: TextFormField(
+                            obscureText: estaObscuro,
+                            focusNode: passwordFocus,
+                            controller: senhaControle,
+                            style: TextStyle(
+                              fontSize: 18,
+                              // fontFamily: primaryFont,
+                              color: Colors.black,
+                            ),
+                            decoration: InputDecoration(
+                              errorStyle: TextStyle(),
+                              contentPadding: EdgeInsets.symmetric(vertical: 5),
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              prefixIcon: Icon(
+                                Icons.vpn_key,
+                                color: Color(0xFF083D99),
+                              ),
+                              labelText: 'Senha',
+                              labelStyle: TextStyle(
+                                fontSize: 18,
+                                color: Color(0xFF083D99),
+                              ),
+                              alignLabelWithHint: false,
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    setState(() => estaObscuro = !estaObscuro);
+                                  },
+                                  icon: Icon(
+                                    estaObscuro
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Color(0xFF083D99),
+                                  )),
+                            ),
+                          ),
+                        ),
                         SizedBox(height: 67),
                         Row(
                           children: [
                             Expanded(
-                              child: RaisedButton(
-                               onPressed: () async {
+                              child: ElevatedButton(
+                                onPressed: () async {
                                   numeroDoCaixa = await WsLogin().getLogin(
                                       emailControle.text,
                                       textToMd5(senhaControle.text));
@@ -173,8 +182,8 @@ class _LoginPageState extends State<LoginPage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (_) =>
-                                              HomePage(numeroDoCaixa),),
+                                        builder: (_) => HomePage(numeroDoCaixa),
+                                      ),
                                     );
                                   }
                                 },
@@ -185,13 +194,7 @@ class _LoginPageState extends State<LoginPage> {
                                     fontSize: 27,
                                   ),
                                 ),
-                                color: corPadraoApp,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  side: BorderSide(
-                                      color: Color.fromARGB(255, 1, 1, 1),
-                                      width: 1.5),
-                                ),
+                                style: ButtonStyle(),
                               ),
                             ),
                           ],
@@ -214,10 +217,12 @@ class _LoginPageState extends State<LoginPage> {
                               'DESENVOLVIDO POR BISOFT',
                               style: GoogleFonts.oswald(
                                 fontSize: 15,
+                                height: 26,
                                 color: Color.fromARGB(255, 0, 0, 0),
                               ),
                             ),
                           ],
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                         ),
                       ],
                     ),

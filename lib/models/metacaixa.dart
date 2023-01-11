@@ -20,5 +20,6 @@ class MetaCaixa{
       rifa = double.parse(json['VLRRIFA']);
       percMensalidade = double.parse(json['PERCMENSALIDADE']);
       percRifa = double.parse(json['PERCRIFA']);
+      
     }
 }

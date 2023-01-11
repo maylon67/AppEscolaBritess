@@ -88,6 +88,7 @@ createTable(String listcontents) {
         children: listcontents
             .split(';')
             .map(
+              
               (contents) => Column(
                 children: [
                   Container(
