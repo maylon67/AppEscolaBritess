@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           Expanded(
             child: Container(
               color:  Color(0xFFFFFFFF),
-              width: double.infinity,
+              width: largura(context),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -167,20 +167,21 @@ class _LoginPageState extends State<LoginPage> {
                                   emailControle.text.trim(),
                                   textToMd5(senhaControle.text.trim()));
                               //testar se numero do caixa e diferente de 0
-                             // if (numeroDoCaixa.codigoCaixa == 0) {
-                             //   Text(
-                             //     'Login Invalido',
-                             //     style: GoogleFonts.reemKufi(
-                             //         color: Colors.red, fontSize: 13),
-                             //   );
-                             // } else {
+                              if (numeroDoCaixa.codigoCaixa == 0) {
+                             final SnackBar snackBar = SnackBar(
+          content: Text('Erro no Login!',style: GoogleFonts.mochiyPopOne(color:textColor,fontSize: 21)),
+          duration: Duration(seconds: 8),
+          backgroundColor: corPadraoApp,
+          );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                              } else {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (_) => HomePage(numeroDoCaixa),
                                   ),
                                 );
-                             // }
+                              }
                             },
                             child: Text(
                               'Login',

@@ -8,3 +8,4 @@ double altura(BuildContext context) => MediaQuery.of(context).size.height;
 double largura(BuildContext context) => MediaQuery.of(context).size.width;
 Color corPadraoApp = Color.fromRGBO(8, 61, 153, 1);
 Color corPadrao2 = Colors.black;
+Color textColor = Colors.white;
