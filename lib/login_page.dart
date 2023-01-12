@@ -38,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Expanded(
             child: Container(
+              height: altura(context),
               color:  Color(0xFFFFFFFF),
               width: largura(context),
               child: SingleChildScrollView(
